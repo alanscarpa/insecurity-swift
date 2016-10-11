@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
 		452142161DAD638700FCBF62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142151DAD638700FCBF62 /* ViewController.swift */; };
-		452142191DAD638700FCBF62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452142171DAD638700FCBF62 /* Main.storyboard */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
 		4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */; };
+		452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142261DAD64ED00FCBF62 /* RootViewController.swift */; };
+		4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521422A1DAD676900FCBF62 /* LoginViewController.swift */; };
+		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452142151DAD638700FCBF62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		452142181DAD638700FCBF62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4521421D1DAD638700FCBF62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4521421F1DAD638700FCBF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452142261DAD64ED00FCBF62 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		4521422A1DAD676900FCBF62 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				452142131DAD638700FCBF62 /* AppDelegate.swift */,
+				452142251DAD64AC00FCBF62 /* View Controllers */,
 				452142151DAD638700FCBF62 /* ViewController.swift */,
-				452142171DAD638700FCBF62 /* Main.storyboard */,
 				4521421A1DAD638700FCBF62 /* Assets.xcassets */,
 				4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */,
 				4521421F1DAD638700FCBF62 /* Info.plist */,
 			);
 			path = "Insecurity-Swift";
+			sourceTree = "<group>";
+		};
+		452142251DAD64AC00FCBF62 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				452142291DAD675500FCBF62 /* Login */,
+				452142281DAD671400FCBF62 /* Root */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		452142281DAD671400FCBF62 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				452142261DAD64ED00FCBF62 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		452142291DAD675500FCBF62 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4521422A1DAD676900FCBF62 /* LoginViewController.swift */,
+				4521422B1DAD676900FCBF62 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +156,7 @@
 			files = (
 				4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */,
 				4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */,
-				452142191DAD638700FCBF62 /* Main.storyboard in Resources */,
+				4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,22 +167,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
 				452142161DAD638700FCBF62 /* ViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
+				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		452142171DAD638700FCBF62 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				452142181DAD638700FCBF62 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,6 +285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98E8SVTQ29;
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arc.Insecurity-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98E8SVTQ29;
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arc.Insecurity-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
