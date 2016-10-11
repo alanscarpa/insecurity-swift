@@ -8,9 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var backgroundPatternImageView: UIImageView!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +21,39 @@ class LoginViewController: UIViewController {
 
     func setUpUI() {
         backgroundPatternImageView.backgroundColor = UIColor(patternImage: UIImage(named: "homeBg")!)
+        [usernameTextField, passwordTextField].forEach({ $0.delegate = self })
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            loginButtonTapped()
+        }
+        return false
     }
-    */
+    
+    // MARK: - UIResponder
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let touch = event?.allTouches?.first
+        if touch?.view?.isKind(of: UITextField.self) == false {
+            view.endEditing(true)
+        }
+    }
 
+    // MARK: - Actions
+    
+    @IBAction func loginButtonTapped() {
+        
+    }
+    
+    @IBAction func signupButtonTapped() {
+        
+    }
 }

@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundPatternImageView" destination="vt1-WX-3ff" id="3WJ-a5-LV9"/>
+                <outlet property="passwordTextField" destination="XIp-xS-DPW" id="ggp-yT-LZQ"/>
+                <outlet property="usernameTextField" destination="fDa-GO-5rm" id="KyG-wj-97m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,14 +37,14 @@
                     <color key="shadowColor" red="0.61960784310000006" green="0.87843137250000003" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <size key="shadowOffset" width="2" height="2"/>
                 </label>
-                <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDa-GO-5rm" userLabel="Username Text Field" customClass="TextFields">
+                <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDa-GO-5rm" userLabel="Username Text Field">
                     <constraints>
                         <constraint firstAttribute="width" constant="187.5" id="YK5-cO-O7g"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIp-xS-DPW" userLabel="Password Text Field" customClass="TextFields">
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIp-xS-DPW" userLabel="Password Text Field">
                     <constraints>
                         <constraint firstAttribute="width" constant="187.5" id="fxJ-Oi-sH6"/>
                     </constraints>
@@ -64,6 +66,9 @@
                             <integer key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginButtonTapped" destination="-1" eventType="touchUpInside" id="uej-eb-pYj"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm4-MB-Nw3" userLabel="Sign Up Button">
                     <color key="backgroundColor" red="0.48935025929999998" green="0.81000119449999997" blue="0.99903333189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,6 +85,9 @@
                             <integer key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="signupButtonTapped" destination="-1" eventType="touchUpInside" id="rwe-K7-pX2"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.17254901960784313" green="0.59999999999999998" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
