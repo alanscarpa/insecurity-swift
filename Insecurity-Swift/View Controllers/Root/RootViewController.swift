@@ -25,7 +25,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         view.addSubview(rootNavigationController.view)
         rootNavigationController.didMove(toParentViewController: self)
         
-        // TODO: import purelayout instead of doing this
+        // TODO: import purelayout instead of doing this, maybe
         rootNavigationController.view.frame = super.view.frame
     }
     

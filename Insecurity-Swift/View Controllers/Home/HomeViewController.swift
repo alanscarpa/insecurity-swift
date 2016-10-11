@@ -10,9 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var backgroundPatternImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        backgroundPatternImageView.backgroundColor = UIColor(patternImage: UIImage(named: "homeBg")!)
     }
 
 }
