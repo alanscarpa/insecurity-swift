@@ -1,20 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundPatternImageView" destination="vt1-WX-3ff" id="3WJ-a5-LV9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-WX-3ff" userLabel="Background Pattern Image View"/>
+                <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-ts-8RZ" userLabel="Background Pattern Overlay">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insecurityLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aKh-ds-T53">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aKh-ds-T53" secondAttribute="height" multiplier="146:167" id="bMo-wS-CXb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSECURITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byL-5N-vIV" userLabel="Title Label">
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="42"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.61960784310000006" green="0.87843137250000003" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="2" height="2"/>
+                </label>
+                <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDa-GO-5rm" userLabel="Username Text Field" customClass="TextFields">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187.5" id="YK5-cO-O7g"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIp-xS-DPW" userLabel="Password Text Field" customClass="TextFields">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187.5" id="fxJ-Oi-sH6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-ds-cQn" userLabel="Log In Button">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="124" id="2uM-st-6US"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="34"/>
+                    <state key="normal" title="Log In">
+                        <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm4-MB-Nw3" userLabel="Sign Up Button">
+                    <color key="backgroundColor" red="0.48935025929999998" green="0.81000119449999997" blue="0.99903333189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="sbB-SC-fJn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="34"/>
+                    <state key="normal" title="Sign Up!">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.17254901960784313" green="0.59999999999999998" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XIp-xS-DPW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fDa-GO-5rm" secondAttribute="bottom" constant="8" id="0v2-aI-iWQ"/>
+                <constraint firstItem="XIp-xS-DPW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Xy-3P-SWE"/>
+                <constraint firstAttribute="bottom" secondItem="vt1-WX-3ff" secondAttribute="bottom" id="1yZ-yI-A5b"/>
+                <constraint firstItem="XIp-xS-DPW" firstAttribute="top" secondItem="fDa-GO-5rm" secondAttribute="bottom" priority="650" constant="30" id="AkP-aS-vXW"/>
+                <constraint firstAttribute="trailing" secondItem="vt1-WX-3ff" secondAttribute="trailing" id="C6L-DW-pk8"/>
+                <constraint firstItem="aKh-ds-T53" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="FrL-w6-oEj"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rm4-MB-Nw3" secondAttribute="bottom" constant="8" id="MBf-lS-kul"/>
+                <constraint firstItem="Rm4-MB-Nw3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P1T-7g-97e"/>
+                <constraint firstItem="vt1-WX-3ff" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SzV-2P-arP"/>
+                <constraint firstAttribute="bottom" secondItem="Rm4-MB-Nw3" secondAttribute="bottom" priority="200" constant="85.5" id="TAT-DM-1kU"/>
+                <constraint firstItem="GeB-ds-cQn" firstAttribute="top" secondItem="XIp-xS-DPW" secondAttribute="bottom" priority="600" constant="70.670000000000002" id="XSd-L9-k1R"/>
+                <constraint firstItem="Rm4-MB-Nw3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GeB-ds-cQn" secondAttribute="bottom" constant="8" id="Xb5-Lm-hHl"/>
+                <constraint firstItem="ooP-ts-8RZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yl2-Am-qjT"/>
+                <constraint firstItem="aKh-ds-T53" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zkp-wz-M8R"/>
+                <constraint firstItem="ooP-ts-8RZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dN0-Md-gGZ"/>
+                <constraint firstItem="aKh-ds-T53" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="edH-sU-w4e"/>
+                <constraint firstAttribute="trailing" secondItem="byL-5N-vIV" secondAttribute="trailing" constant="14" id="fq9-Y1-DCf"/>
+                <constraint firstItem="fDa-GO-5rm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gQZ-TC-6G0"/>
+                <constraint firstItem="GeB-ds-cQn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XIp-xS-DPW" secondAttribute="bottom" constant="24" id="hs5-TH-Mtr"/>
+                <constraint firstItem="Rm4-MB-Nw3" firstAttribute="top" secondItem="GeB-ds-cQn" secondAttribute="bottom" priority="500" constant="50" id="iWL-A8-lcp"/>
+                <constraint firstItem="byL-5N-vIV" firstAttribute="top" secondItem="aKh-ds-T53" secondAttribute="bottom" constant="28" id="iwt-rE-PFV"/>
+                <constraint firstItem="fDa-GO-5rm" firstAttribute="top" secondItem="byL-5N-vIV" secondAttribute="bottom" priority="700" constant="28.5" id="kuj-ee-TWN"/>
+                <constraint firstItem="fDa-GO-5rm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="byL-5N-vIV" secondAttribute="bottom" constant="12" id="sQh-KI-hgf"/>
+                <constraint firstAttribute="trailing" secondItem="ooP-ts-8RZ" secondAttribute="trailing" id="tP7-c4-MIG"/>
+                <constraint firstAttribute="bottom" secondItem="ooP-ts-8RZ" secondAttribute="bottom" id="v7C-1P-y0R"/>
+                <constraint firstItem="byL-5N-vIV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="veq-b4-bSq"/>
+                <constraint firstItem="GeB-ds-cQn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="y1K-59-RYA"/>
+                <constraint firstItem="vt1-WX-3ff" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yxY-2o-drz"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="91.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="insecurityLogo" width="730" height="833"/>
+    </resources>
 </document>
