@@ -16,7 +16,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vt1-WX-3ff" userLabel="Background Pattern Image View"/>
@@ -90,12 +90,12 @@
                 <constraint firstItem="XIp-xS-DPW" firstAttribute="top" secondItem="fDa-GO-5rm" secondAttribute="bottom" priority="650" constant="30" id="AkP-aS-vXW"/>
                 <constraint firstAttribute="trailing" secondItem="vt1-WX-3ff" secondAttribute="trailing" id="C6L-DW-pk8"/>
                 <constraint firstItem="aKh-ds-T53" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="FrL-w6-oEj"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rm4-MB-Nw3" secondAttribute="bottom" constant="8" id="MBf-lS-kul"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Rm4-MB-Nw3" secondAttribute="bottom" constant="16" id="MBf-lS-kul"/>
                 <constraint firstItem="Rm4-MB-Nw3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P1T-7g-97e"/>
                 <constraint firstItem="vt1-WX-3ff" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SzV-2P-arP"/>
                 <constraint firstAttribute="bottom" secondItem="Rm4-MB-Nw3" secondAttribute="bottom" priority="200" constant="85.5" id="TAT-DM-1kU"/>
-                <constraint firstItem="GeB-ds-cQn" firstAttribute="top" secondItem="XIp-xS-DPW" secondAttribute="bottom" priority="600" constant="70.670000000000002" id="XSd-L9-k1R"/>
-                <constraint firstItem="Rm4-MB-Nw3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GeB-ds-cQn" secondAttribute="bottom" constant="8" id="Xb5-Lm-hHl"/>
+                <constraint firstItem="GeB-ds-cQn" firstAttribute="top" secondItem="XIp-xS-DPW" secondAttribute="bottom" priority="400" constant="35" id="XSd-L9-k1R"/>
+                <constraint firstItem="Rm4-MB-Nw3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GeB-ds-cQn" secondAttribute="bottom" constant="24" id="Xb5-Lm-hHl"/>
                 <constraint firstItem="ooP-ts-8RZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yl2-Am-qjT"/>
                 <constraint firstItem="aKh-ds-T53" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zkp-wz-M8R"/>
                 <constraint firstItem="ooP-ts-8RZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dN0-Md-gGZ"/>
