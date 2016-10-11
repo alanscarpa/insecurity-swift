@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF141DAD78D0005430CE /* HomeViewController.swift */; };
+		451CAF171DAD78D0005430CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF151DAD78D0005430CE /* HomeViewController.xib */; };
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
 		452142161DAD638700FCBF62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142151DAD638700FCBF62 /* ViewController.swift */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451CAF141DAD78D0005430CE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		451CAF151DAD78D0005430CE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452142151DAD638700FCBF62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		451CAF131DAD78AF005430CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				451CAF141DAD78D0005430CE /* HomeViewController.swift */,
+				451CAF151DAD78D0005430CE /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		452142071DAD638700FCBF62 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +84,7 @@
 		452142251DAD64AC00FCBF62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				451CAF131DAD78AF005430CE /* Home */,
 				452142291DAD675500FCBF62 /* Login */,
 				452142281DAD671400FCBF62 /* Root */,
 			);
@@ -157,6 +171,7 @@
 				4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */,
 				4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */,
 				4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */,
+				451CAF171DAD78D0005430CE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
 				452142161DAD638700FCBF62 /* ViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
@@ -326,6 +342,7 @@
 				452142241DAD638700FCBF62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

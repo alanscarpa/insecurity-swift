@@ -27,13 +27,16 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         
         // TODO: import purelayout instead of doing this
         rootNavigationController.view.frame = super.view.frame
-//        [self.rootNavigationController.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-        
-        presentLoginScreen()
     }
     
-    func presentLoginScreen() {
+    func presentLoginVC() {
+        // TODO: make sure to log out user every time
+        // Maybe log out when app goes to background (as long as it isnt called on lock screen)
         rootNavigationController.viewControllers = [LoginViewController()]
+    }
+    
+    func presentHomeVC() {
+        rootNavigationController.pushViewController(HomeViewController(), animated: true)
     }
 
 }

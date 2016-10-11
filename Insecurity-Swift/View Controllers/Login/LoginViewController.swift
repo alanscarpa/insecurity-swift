@@ -50,10 +50,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func loginButtonTapped() {
-        
+        // TODO: check if user exists on firebase,
+        // then present home vc
+        RootViewController.sharedInstance.presentHomeVC()
     }
     
     @IBAction func signupButtonTapped() {
-        
+        // TODO: send user to sign up vc
     }
 }
