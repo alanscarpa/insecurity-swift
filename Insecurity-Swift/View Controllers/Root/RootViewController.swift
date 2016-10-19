@@ -55,4 +55,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     func pushSignupVC() {
         rootNavigationController.pushViewController(SignupViewController(), animated: true)
     }
+    
+    func pushHowItWorksVC() {
+        rootNavigationController.pushViewController(HowItWorksViewController(), animated: true)
+    }
 }

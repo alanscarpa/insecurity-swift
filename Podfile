@@ -7,5 +7,6 @@ target 'Insecurity-Swift' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'SVProgressHUD'
+  pod 'IQKeyboardManagerSwift'
   
 end

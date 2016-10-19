@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func howItWorksButtonTapped() {
-        
+        RootViewController.sharedInstance.pushHowItWorksVC()
     }
     
     @IBAction func logoutButtonTapped() {

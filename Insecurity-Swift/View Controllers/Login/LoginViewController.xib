@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundPatternImageView" destination="vt1-WX-3ff" id="3WJ-a5-LV9"/>
+                <outlet property="backgroundPatternImageView" destination="vt1-WX-3ff" id="Zm2-QX-Xdj"/>
                 <outlet property="emailTextField" destination="fDa-GO-5rm" id="QjD-dt-wpD"/>
                 <outlet property="passwordTextField" destination="XIp-xS-DPW" id="ggp-yT-LZQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
