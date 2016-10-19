@@ -17,14 +17,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
-            if auth.currentUser == nil {
-                RootViewController.sharedInstance.popViewController()
-            }
-        })
+        FIRAuth.auth()?.addStateDidChangeListener(authStateChangedHandler)
     }
     
-    func setUpUI() {
+    private func setUpUI() {
         backgroundPatternImageView.backgroundColor = UIColor(patternImage: UIImage(named: "homeBg")!)
     }
 
@@ -36,12 +32,24 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func logoutButtonTapped() {
-        try! FIRAuth.auth()?.signOut()
+    @IBAction func howItWorksButtonTapped() {
+        
     }
     
-    @IBAction func howItWorksButtonTapped() {
-
+    @IBAction func logoutButtonTapped() {
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            present(UIAlertController.createSimpleAlert(withTitle: "Error Logging Out", message: error.localizedDescription), animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func authStateChangedHandler(auth: FIRAuth, user: FIRUser?) -> Swift.Void {
+        if auth.currentUser == nil {
+            RootViewController.sharedInstance.popViewController()
+        }
     }
     
 }
