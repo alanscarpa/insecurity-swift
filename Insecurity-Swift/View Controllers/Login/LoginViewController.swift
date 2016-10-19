@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -49,9 +52,19 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func loginButtonTapped() {
-        // TODO: check if user exists on firebase,
-        // then present home vc
-        RootViewController.sharedInstance.pushHomeVC()
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        SVProgressHUD.show()
+        
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            SVProgressHUD.dismiss()
+            if let error = error {
+                self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            } else {
+                RootViewController.sharedInstance.goToHomeVC()
+            }
+        })
     }
     
     @IBAction func signupButtonTapped() {
