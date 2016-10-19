@@ -8,10 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var backgroundPatternImageView: UIImageView!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -21,7 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     func setUpUI() {
         backgroundPatternImageView.backgroundColor = UIColor(patternImage: UIImage(named: "homeBg")!)
-        [usernameTextField, passwordTextField].forEach({ $0.delegate = self })
     }
 
     // MARK: - UITextFieldDelegate
@@ -56,6 +55,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signupButtonTapped() {
-        // TODO: send user to sign up vc
+        RootViewController.sharedInstance.presentSingupVC()
     }
 }

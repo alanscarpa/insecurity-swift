@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="Insecurity_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmPasswordTextField" destination="cUS-nL-R6n" id="nFr-1S-6TA"/>
+                <outlet property="emailTextField" destination="t4l-cM-u5V" id="N0V-Fa-NmW"/>
+                <outlet property="passwordTextField" destination="IL5-eV-5YD" id="QnP-vS-NhS"/>
+                <outlet property="view" destination="b06-K7-C72" id="pBx-mR-PVi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="b06-K7-C72">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JPo-cc-uWc"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXU-KP-gPZ">
+                    <color key="backgroundColor" red="0.48935025929999998" green="0.81000119449999997" blue="0.99903333189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="32"/>
+                    <state key="normal" title="Sign Up!">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="signUpButtonTapped" destination="-1" eventType="touchUpInside" id="epk-82-bXI"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (6 chars min.)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IL5-eV-5YD">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Tb1-dQ-rbH"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUS-nL-R6n">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="d8Y-hF-A4b"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t4l-cM-u5V">
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="lPu-Fs-Ifp"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-jO-Apz">
+                    <state key="normal" title="By clicking Sign Up, you are agreeing to the Insecurity Privacy Policy.  Click to view.">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="privacyPolicyButtonTapped" destination="-1" eventType="touchUpInside" id="Yec-eA-Shh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture Phone Snoopers Now!" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igq-He-d3E">
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.61960784310000006" green="0.87843137250000003" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="1" height="2"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.17391428349999999" green="0.59988039729999998" blue="0.8293479681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VXU-KP-gPZ" firstAttribute="top" secondItem="cUS-nL-R6n" secondAttribute="bottom" multiplier="1.1" id="29v-BL-1YE"/>
+                <constraint firstItem="cUS-nL-R6n" firstAttribute="top" secondItem="IL5-eV-5YD" secondAttribute="bottom" constant="16" id="3t4-ZY-tdX"/>
+                <constraint firstItem="t4l-cM-u5V" firstAttribute="top" secondItem="igq-He-d3E" secondAttribute="bottom" constant="24" id="597-qr-TdV"/>
+                <constraint firstItem="igq-He-d3E" firstAttribute="width" secondItem="b06-K7-C72" secondAttribute="width" id="5eG-ry-nw4"/>
+                <constraint firstItem="VXU-KP-gPZ" firstAttribute="width" secondItem="JPo-cc-uWc" secondAttribute="width" multiplier="0.5" id="7c0-DF-Otq"/>
+                <constraint firstItem="JPo-cc-uWc" firstAttribute="width" secondItem="b06-K7-C72" secondAttribute="width" id="EJf-26-mSK"/>
+                <constraint firstItem="t4l-cM-u5V" firstAttribute="width" secondItem="b06-K7-C72" secondAttribute="width" multiplier="0.6" id="Hbc-c4-Qgd"/>
+                <constraint firstAttribute="centerX" secondItem="IL5-eV-5YD" secondAttribute="centerX" id="JOg-Am-yWz"/>
+                <constraint firstItem="cUS-nL-R6n" firstAttribute="width" secondItem="b06-K7-C72" secondAttribute="width" multiplier="0.6" id="O3J-Ye-kmJ"/>
+                <constraint firstItem="ftc-jO-Apz" firstAttribute="width" secondItem="JPo-cc-uWc" secondAttribute="width" multiplier="0.8" id="Soe-zz-ozI"/>
+                <constraint firstItem="IL5-eV-5YD" firstAttribute="height" secondItem="b06-K7-C72" secondAttribute="height" multiplier="0.07" id="T0u-Ty-VAJ"/>
+                <constraint firstItem="IL5-eV-5YD" firstAttribute="top" secondItem="t4l-cM-u5V" secondAttribute="bottom" constant="16" id="Upm-Gq-Ukh"/>
+                <constraint firstItem="cUS-nL-R6n" firstAttribute="height" secondItem="b06-K7-C72" secondAttribute="height" multiplier="0.07" id="VFl-XQ-qqo"/>
+                <constraint firstItem="JPo-cc-uWc" firstAttribute="height" secondItem="b06-K7-C72" secondAttribute="height" id="VTY-AI-Agh"/>
+                <constraint firstItem="ftc-jO-Apz" firstAttribute="top" secondItem="VXU-KP-gPZ" secondAttribute="bottom" constant="45" id="XwE-3n-9XI"/>
+                <constraint firstItem="IL5-eV-5YD" firstAttribute="width" secondItem="b06-K7-C72" secondAttribute="width" multiplier="0.6" id="abp-F7-O2U"/>
+                <constraint firstItem="igq-He-d3E" firstAttribute="centerX" secondItem="b06-K7-C72" secondAttribute="centerX" id="dYR-Px-SEH"/>
+                <constraint firstAttribute="centerY" secondItem="JPo-cc-uWc" secondAttribute="centerY" id="fza-Dk-bYL"/>
+                <constraint firstAttribute="centerX" secondItem="cUS-nL-R6n" secondAttribute="centerX" id="gbW-pc-gdE"/>
+                <constraint firstAttribute="centerY" secondItem="VXU-KP-gPZ" secondAttribute="centerY" id="k6I-aN-uxz"/>
+                <constraint firstItem="ftc-jO-Apz" firstAttribute="top" secondItem="JPo-cc-uWc" secondAttribute="bottom" constant="-154" id="okx-fn-Ep8"/>
+                <constraint firstItem="t4l-cM-u5V" firstAttribute="height" secondItem="b06-K7-C72" secondAttribute="height" multiplier="0.07" id="qZF-RK-49j"/>
+                <constraint firstItem="igq-He-d3E" firstAttribute="centerY" secondItem="b06-K7-C72" secondAttribute="centerY" multiplier="0.3" id="sNo-MU-Kvb"/>
+                <constraint firstAttribute="centerX" secondItem="VXU-KP-gPZ" secondAttribute="centerX" id="smM-Cu-2j1"/>
+                <constraint firstAttribute="centerX" secondItem="t4l-cM-u5V" secondAttribute="centerX" id="vHM-HV-oXu"/>
+                <constraint firstItem="VXU-KP-gPZ" firstAttribute="height" secondItem="JPo-cc-uWc" secondAttribute="height" multiplier="0.1" id="wMZ-Nt-bms"/>
+                <constraint firstAttribute="centerX" secondItem="JPo-cc-uWc" secondAttribute="centerX" id="yfh-8U-V29"/>
+                <constraint firstItem="ftc-jO-Apz" firstAttribute="centerX" secondItem="JPo-cc-uWc" secondAttribute="centerX" constant="0.5" id="yrI-E1-bhe"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="5eG-ry-nw4"/>
+                    <exclude reference="k6I-aN-uxz"/>
+                    <exclude reference="okx-fn-Ep8"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

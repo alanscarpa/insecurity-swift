@@ -9,27 +9,35 @@
 /* Begin PBXBuildFile section */
 		451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF141DAD78D0005430CE /* HomeViewController.swift */; };
 		451CAF171DAD78D0005430CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF151DAD78D0005430CE /* HomeViewController.xib */; };
+		451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */; };
+		451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF1F1DB810EE005430CE /* SignupViewController.swift */; };
+		451CAF221DB810EE005430CE /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF201DB810EE005430CE /* SignupViewController.xib */; };
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
-		452142161DAD638700FCBF62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142151DAD638700FCBF62 /* ViewController.swift */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
 		4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */; };
 		452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142261DAD64ED00FCBF62 /* RootViewController.swift */; };
 		4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521422A1DAD676900FCBF62 /* LoginViewController.swift */; };
 		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
+		9659332F465CAAFB228B33CF /* Pods_Insecurity_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		451CAF141DAD78D0005430CE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		451CAF151DAD78D0005430CE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		451CAF1F1DB810EE005430CE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		451CAF201DB810EE005430CE /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		452142151DAD638700FCBF62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4521421D1DAD638700FCBF62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4521421F1DAD638700FCBF62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452142261DAD64ED00FCBF62 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4521422A1DAD676900FCBF62 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insecurity_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9659332F465CAAFB228B33CF /* Pods_Insecurity_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +61,22 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		451CAF1E1DB810D6005430CE /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				451CAF1F1DB810EE005430CE /* SignupViewController.swift */,
+				451CAF201DB810EE005430CE /* SignupViewController.xib */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		452142071DAD638700FCBF62 = {
 			isa = PBXGroup;
 			children = (
 				452142121DAD638700FCBF62 /* Insecurity-Swift */,
 				452142111DAD638700FCBF62 /* Products */,
+				FA876EB51FC90A80A0522341 /* Pods */,
+				5FCFB291874977388055245F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +93,10 @@
 			children = (
 				452142131DAD638700FCBF62 /* AppDelegate.swift */,
 				452142251DAD64AC00FCBF62 /* View Controllers */,
-				452142151DAD638700FCBF62 /* ViewController.swift */,
 				4521421A1DAD638700FCBF62 /* Assets.xcassets */,
 				4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */,
 				4521421F1DAD638700FCBF62 /* Info.plist */,
+				451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */,
 			);
 			path = "Insecurity-Swift";
 			sourceTree = "<group>";
@@ -84,6 +104,7 @@
 		452142251DAD64AC00FCBF62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				451CAF1E1DB810D6005430CE /* Signup */,
 				451CAF131DAD78AF005430CE /* Home */,
 				452142291DAD675500FCBF62 /* Login */,
 				452142281DAD671400FCBF62 /* Root */,
@@ -108,6 +129,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		5FCFB291874977388055245F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA876EB51FC90A80A0522341 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */,
+				4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 452142221DAD638700FCBF62 /* Build configuration list for PBXNativeTarget "Insecurity-Swift" */;
 			buildPhases = (
+				87A79FB88DA8E4363D4E9855 /* [CP] Check Pods Manifest.lock */,
 				4521420C1DAD638700FCBF62 /* Sources */,
 				4521420D1DAD638700FCBF62 /* Frameworks */,
 				4521420E1DAD638700FCBF62 /* Resources */,
+				A6839403F4B4FE464FD8C4C2 /* [CP] Embed Pods Frameworks */,
+				E3F5E395025CF3E2D99EAACA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,14 +209,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451CAF221DB810EE005430CE /* SignupViewController.xib in Resources */,
 				4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */,
 				4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */,
+				451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */,
 				4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */,
 				451CAF171DAD78D0005430CE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87A79FB88DA8E4363D4E9855 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6839403F4B4FE464FD8C4C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3F5E395025CF3E2D99EAACA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4521420C1DAD638700FCBF62 /* Sources */ = {
@@ -184,7 +275,7 @@
 			files = (
 				451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
-				452142161DAD638700FCBF62 /* ViewController.swift in Sources */,
+				451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
 				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,
 			);
@@ -297,6 +388,7 @@
 		};
 		452142231DAD638700FCBF62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98E8SVTQ29;
@@ -311,6 +403,7 @@
 		};
 		452142241DAD638700FCBF62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 98E8SVTQ29;

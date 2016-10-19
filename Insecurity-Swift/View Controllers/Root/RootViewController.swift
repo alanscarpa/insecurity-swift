@@ -13,6 +13,11 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     static let sharedInstance = RootViewController()
     
     let rootNavigationController = UINavigationController()
+    var showNavigationBar = false {
+        didSet {
+            rootNavigationController.setNavigationBarHidden(!showNavigationBar, animated: true)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,4 +44,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         rootNavigationController.pushViewController(HomeViewController(), animated: true)
     }
 
+    func presentSingupVC() {
+        rootNavigationController.pushViewController(SignupViewController(), animated: true)
+    }
 }

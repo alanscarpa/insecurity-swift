@@ -1,0 +1,6 @@
+framework module Pods_Insecurity_Swift {
+  umbrella header "Pods-Insecurity-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
