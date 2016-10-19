@@ -49,17 +49,25 @@ class SignupViewController: UIViewController {
         }
     }
     
+    private func validEmailAndPassword() -> (email: String, password: String)? {
+        if let email = emailTextField.text,
+            let password = passwordTextField.text, password.characters.count >= 6, passwordTextField.text == confirmPasswordTextField.text {
+            return (email, password)
+        }
+        return nil
+    }
+    
     // MARK: - Actions
     
     @IBAction func signUpButtonTapped() {
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+        guard let credentials = validEmailAndPassword() else {
+            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "Make sure your email is valid, your password has at least 6 characters, and both passwords match."), animated: true, completion: nil)
+            return
+        }
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: credentials.email, password: credentials.password) { (user, error) in
             if let error = error {
-                // TODO: show alert
-                print(error)
-                print(error.localizedDescription)
+                self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
             } else {
                 print(user)
                 // TODO: login

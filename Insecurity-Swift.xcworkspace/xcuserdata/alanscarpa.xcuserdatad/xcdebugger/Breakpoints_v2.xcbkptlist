@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Signup/SignupViewController.swift"
-            timestampString = "498604472.473967"
+            timestampString = "498605526.755819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "signUpButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Signup/SignupViewController.swift"
-            timestampString = "498604478.726961"
+            timestampString = "498604992.657353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "signUpButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>

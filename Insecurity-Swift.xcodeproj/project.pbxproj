@@ -12,6 +12,7 @@
 		451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */; };
 		451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF1F1DB810EE005430CE /* SignupViewController.swift */; };
 		451CAF221DB810EE005430CE /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF201DB810EE005430CE /* SignupViewController.xib */; };
+		451CAF251DB81C88005430CE /* UIAlertController+Insecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF241DB81C88005430CE /* UIAlertController+Insecurity.swift */; };
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
 		4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 		451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		451CAF1F1DB810EE005430CE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		451CAF201DB810EE005430CE /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		451CAF241DB81C88005430CE /* UIAlertController+Insecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Insecurity.swift"; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		451CAF231DB81C68005430CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				451CAF241DB81C88005430CE /* UIAlertController+Insecurity.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		452142071DAD638700FCBF62 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 			children = (
 				452142131DAD638700FCBF62 /* AppDelegate.swift */,
 				452142251DAD64AC00FCBF62 /* View Controllers */,
+				451CAF231DB81C68005430CE /* Extensions */,
 				4521421A1DAD638700FCBF62 /* Assets.xcassets */,
 				4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */,
 				4521421F1DAD638700FCBF62 /* Info.plist */,
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */,
+				451CAF251DB81C88005430CE /* UIAlertController+Insecurity.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
 				451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
