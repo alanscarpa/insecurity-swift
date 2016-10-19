@@ -51,10 +51,10 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped() {
         // TODO: check if user exists on firebase,
         // then present home vc
-        RootViewController.sharedInstance.presentHomeVC()
+        RootViewController.sharedInstance.pushHomeVC()
     }
     
     @IBAction func signupButtonTapped() {
-        RootViewController.sharedInstance.presentSingupVC()
+        RootViewController.sharedInstance.pushSignupVC()
     }
 }

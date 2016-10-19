@@ -59,7 +59,7 @@ class SignupViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func signUpButtonTapped() {
+    @IBAction func signUpButtonTapped() {        
         guard let credentials = validEmailAndPassword() else {
             present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "Make sure your email is valid, your password has at least 6 characters, and both passwords match."), animated: true, completion: nil)
             return
@@ -69,8 +69,13 @@ class SignupViewController: UIViewController {
             if let error = error {
                 self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
             } else {
-                print(user)
-                // TODO: login
+                FIRAuth.auth()?.signIn(withEmail: credentials.email, password: credentials.password, completion: { (user, error) in
+                    if let error = error {
+                        self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
+                    } else {
+                        RootViewController.sharedInstance.goToHomeVC()
+                    }
+                })
             }
         }
     }

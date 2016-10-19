@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Signup/SignupViewController.swift"
-            timestampString = "498605526.755819"
+            timestampString = "498606162.689958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "signUpButtonTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Insecurity-Swift/View Controllers/Signup/SignupViewController.swift"
-            timestampString = "498604992.657353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "signUpButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>

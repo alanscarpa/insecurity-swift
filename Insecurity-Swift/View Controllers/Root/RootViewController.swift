@@ -34,17 +34,21 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         rootNavigationController.view.frame = super.view.frame
     }
     
-    func presentLoginVC() {
+    func goToLoginVC() {
         // TODO: make sure to log out user every time
         // Maybe log out when app goes to background (as long as it isnt called on lock screen)
-        rootNavigationController.viewControllers = [LoginViewController()]
+        rootNavigationController.setViewControllers([LoginViewController()], animated: true)
     }
     
-    func presentHomeVC() {
+    func pushHomeVC() {
         rootNavigationController.pushViewController(HomeViewController(), animated: true)
     }
+    
+    func goToHomeVC() {
+        rootNavigationController.setViewControllers([HomeViewController()], animated: true)
+    }
 
-    func presentSingupVC() {
+    func pushSignupVC() {
         rootNavigationController.pushViewController(SignupViewController(), animated: true)
     }
 }

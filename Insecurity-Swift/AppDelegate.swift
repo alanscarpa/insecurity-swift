@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = RootViewController.sharedInstance
         window!.makeKeyAndVisible()
         
-        RootViewController.sharedInstance.presentLoginVC()
+        RootViewController.sharedInstance.goToLoginVC()
         
         return true
     }
