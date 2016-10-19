@@ -62,12 +62,20 @@ class LoginViewController: UIViewController {
             if let error = error {
                 self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
             } else {
-                RootViewController.sharedInstance.goToHomeVC()
+                self.clearCredentials()
+                self.view.endEditing(true)
+                RootViewController.sharedInstance.pushHomeVC()
             }
         })
     }
     
     @IBAction func signupButtonTapped() {
         RootViewController.sharedInstance.pushSignupVC()
+    }
+    
+    // MARK: - Helpers
+    
+    private func clearCredentials() {
+        [emailTextField, passwordTextField].forEach({ $0.text = nil })
     }
 }

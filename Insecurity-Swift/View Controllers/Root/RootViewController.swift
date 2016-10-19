@@ -34,6 +34,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         rootNavigationController.view.frame = super.view.frame
     }
     
+    func popViewController() {
+        rootNavigationController.popViewController(animated: true)
+    }
+    
     func goToLoginVC() {
         // TODO: make sure to log out user every time
         // Maybe log out when app goes to background (as long as it isnt called on lock screen)

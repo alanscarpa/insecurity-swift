@@ -3,44 +3,104 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundPatternImageView" destination="OkH-YB-KSU" id="JKp-7n-d8g"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="backgroundPatternImageView" destination="I3l-OB-i2a" id="wZn-vL-w9a"/>
+                <outlet property="view" destination="6ST-Dz-zy2" id="xcY-Bd-lx8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="6ST-Dz-zy2">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-YB-KSU" userLabel="Background Pattern Image View">
-                    <frame key="frameInset" minX="-20" minY="-35" width="414" height="736"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gA-zg-DJh" userLabel="Background Pattern Overlay">
-                    <frame key="frameInset" minX="-20" minY="-35" width="414" height="736"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="insecurityLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dqC-q5-nOP">
-                    <frame key="frameInset" minX="123" minY="41" width="128" height="147.33333333333334"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSECURITY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fm-QV-gtY" userLabel="Title Label">
-                    <frame key="frameInset" minX="-6" minY="222" width="386" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3l-OB-i2a"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFx-pb-Tmi">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="40"/>
+                    <state key="normal" title="Set Trap!">
+                        <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="setTrapButtonTapped" destination="-1" eventType="touchUpInside" id="xgq-qs-buQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR3-4t-wGU">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                    <state key="normal" title="Log out">
+                        <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="logoutButtonTapped" destination="-1" eventType="touchUpInside" id="2hn-0d-gCt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-Vj-siL">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                    <state key="normal" title="View Snoopers">
+                        <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="viewSnoopersButtonTapped" destination="-1" eventType="touchUpInside" id="7Z3-rC-bqz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUl-go-xam">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                    <state key="normal" title="How It Works">
+                        <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="howItWorksButtonTapped" destination="-1" eventType="touchUpInside" id="lSC-jE-Ufn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insecurity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8J-8O-eWN">
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="42"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.61960784310000006" green="0.87843137250000003" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <size key="shadowOffset" width="2" height="2"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insecurityLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hMO-va-nWQ"/>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.17391428349999999" green="0.59988039729999998" blue="0.8293479681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yR3-4t-wGU" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" multiplier="0.45" id="0n6-oK-qja"/>
+                <constraint firstItem="HT2-Vj-siL" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" multiplier="0.15" id="C4S-5u-fz7"/>
+                <constraint firstItem="I3l-OB-i2a" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" id="Gv8-PY-AgM"/>
+                <constraint firstItem="wUl-go-xam" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" multiplier="0.08" id="KR0-0o-RXk"/>
+                <constraint firstItem="JFx-pb-Tmi" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" multiplier="0.75" id="MpG-0r-55D"/>
+                <constraint firstAttribute="centerX" secondItem="I3l-OB-i2a" secondAttribute="centerX" id="N1P-nA-4Cj"/>
+                <constraint firstAttribute="centerX" secondItem="JFx-pb-Tmi" secondAttribute="centerX" id="PbB-V3-8RA"/>
+                <constraint firstItem="wUl-go-xam" firstAttribute="centerX" secondItem="6ST-Dz-zy2" secondAttribute="centerX" multiplier="0.5" id="Tou-Tq-dr8"/>
+                <constraint firstItem="wUl-go-xam" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" multiplier="0.45" id="Tvq-h2-ud4"/>
+                <constraint firstItem="hMO-va-nWQ" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" multiplier="0.2" id="X1v-6f-r4z"/>
+                <constraint firstItem="HT2-Vj-siL" firstAttribute="top" secondItem="JFx-pb-Tmi" secondAttribute="bottom" multiplier="1.1" id="XDz-zZ-TU9"/>
+                <constraint firstItem="hMO-va-nWQ" firstAttribute="centerY" secondItem="I3l-OB-i2a" secondAttribute="centerY" multiplier="0.3" id="Xnd-Nc-nbo"/>
+                <constraint firstItem="hMO-va-nWQ" firstAttribute="centerX" secondItem="6ST-Dz-zy2" secondAttribute="centerX" id="anw-RM-4eR"/>
+                <constraint firstAttribute="centerX" secondItem="HT2-Vj-siL" secondAttribute="centerX" id="b7c-fz-c6W"/>
+                <constraint firstItem="JFx-pb-Tmi" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" multiplier="0.15" id="duL-cw-YNZ"/>
+                <constraint firstAttribute="bottom" secondItem="wUl-go-xam" secondAttribute="bottom" constant="24" id="ej5-co-6JK"/>
+                <constraint firstItem="JFx-pb-Tmi" firstAttribute="top" secondItem="A8J-8O-eWN" secondAttribute="bottom" multiplier="1.2" id="fs0-wd-K82"/>
+                <constraint firstItem="hMO-va-nWQ" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" multiplier="0.5" id="g6m-ud-5YM"/>
+                <constraint firstItem="A8J-8O-eWN" firstAttribute="top" secondItem="hMO-va-nWQ" secondAttribute="bottom" id="hXh-Rm-gB6"/>
+                <constraint firstItem="yR3-4t-wGU" firstAttribute="height" secondItem="6ST-Dz-zy2" secondAttribute="height" multiplier="0.08" id="iB8-Yh-Vwv"/>
+                <constraint firstAttribute="centerY" secondItem="I3l-OB-i2a" secondAttribute="centerY" id="kVe-yf-L6D"/>
+                <constraint firstAttribute="bottom" secondItem="yR3-4t-wGU" secondAttribute="bottom" constant="24" id="pzf-Lh-vBR"/>
+                <constraint firstItem="HT2-Vj-siL" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" multiplier="0.75" id="rdw-mw-hQQ"/>
+                <constraint firstAttribute="centerX" secondItem="A8J-8O-eWN" secondAttribute="centerX" id="tvO-Y5-iHM"/>
+                <constraint firstItem="yR3-4t-wGU" firstAttribute="centerX" secondItem="6ST-Dz-zy2" secondAttribute="centerX" multiplier="1.5" id="uhK-MT-2ME"/>
+                <constraint firstItem="I3l-OB-i2a" firstAttribute="width" secondItem="6ST-Dz-zy2" secondAttribute="width" id="vkD-kx-a1w"/>
+            </constraints>
         </view>
     </objects>
     <resources>
