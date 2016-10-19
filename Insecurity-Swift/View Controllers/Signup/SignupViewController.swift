@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SVProgressHUD
 
 class SignupViewController: UIViewController {
 
@@ -65,11 +66,15 @@ class SignupViewController: UIViewController {
             return
         }
         
+        SVProgressHUD.show()
+        
         FIRAuth.auth()?.createUser(withEmail: credentials.email, password: credentials.password) { (user, error) in
             if let error = error {
+                SVProgressHUD.dismiss()
                 self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
             } else {
                 FIRAuth.auth()?.signIn(withEmail: credentials.email, password: credentials.password, completion: { (user, error) in
+                    SVProgressHUD.dismiss()
                     if let error = error {
                         self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
                     } else {

@@ -6,5 +6,6 @@ target 'Insecurity-Swift' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'SVProgressHUD'
   
 end

@@ -29,6 +29,7 @@
 		451CAF1F1DB810EE005430CE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		451CAF201DB810EE005430CE /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		451CAF241DB81C88005430CE /* UIAlertController+Insecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Insecurity.swift"; sourceTree = "<group>"; };
+		451CAF261DB8216B005430CE /* Insecurity-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Insecurity-Swift.entitlements"; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 				4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */,
 				4521421F1DAD638700FCBF62 /* Info.plist */,
 				451CAF1C1DB8104A005430CE /* GoogleService-Info.plist */,
+				451CAF261DB8216B005430CE /* Insecurity-Swift.entitlements */,
 			);
 			path = "Insecurity-Swift";
 			sourceTree = "<group>";
@@ -194,6 +196,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 98E8SVTQ29;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -403,6 +410,7 @@
 			baseConfigurationReference = CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Insecurity-Swift/Insecurity-Swift.entitlements";
 				DEVELOPMENT_TEAM = 98E8SVTQ29;
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -418,6 +426,7 @@
 			baseConfigurationReference = 4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Insecurity-Swift/Insecurity-Swift.entitlements";
 				DEVELOPMENT_TEAM = 98E8SVTQ29;
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
