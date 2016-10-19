@@ -13,12 +13,12 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="nFs-KK-XIO">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnC-iD-d9p">
                     <mutableString key="text">Insecurity is a fun app that automatically takes a photo of someone if they start looking through your phone without your permission!   For best results, turn off your passcode.  We are unable to take photos of snoopers who incorrectly enter your passcode.    Here's how it works:  1)  Tap the "Set Trap" button. 2)  Lock your phone. 3)  When a phone snooper unlocks your phone, it will sound an alarm and snap a photo!</mutableString>
-                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -27,12 +27,18 @@
                         <color key="titleColor" red="0.55456039820000003" green="0.84847716529999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="privacyPolicyButtonTapped" destination="-1" eventType="touchUpInside" id="kIU-9C-W3X"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pa-ce-q4I">
                     <state key="normal" title="Delete Account">
                         <color key="titleColor" red="0.55456039820000003" green="0.84847716529999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="deleteAccountButtonTapped" destination="-1" eventType="touchUpInside" id="VTB-1v-byJ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.17391428349999999" green="0.59988039729999998" blue="0.8293479681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +46,7 @@
                 <constraint firstItem="6Pa-ce-q4I" firstAttribute="top" secondItem="hQ6-PY-YX3" secondAttribute="bottom" constant="16" id="76k-Td-x5K"/>
                 <constraint firstAttribute="centerX" secondItem="hQ6-PY-YX3" secondAttribute="centerX" id="7AJ-L4-mTQ"/>
                 <constraint firstItem="6Pa-ce-q4I" firstAttribute="centerX" secondItem="nFs-KK-XIO" secondAttribute="centerX" id="9RS-Wv-nDi"/>
-                <constraint firstItem="DnC-iD-d9p" firstAttribute="top" secondItem="nFs-KK-XIO" secondAttribute="top" constant="48" id="K1r-Ap-Ucl"/>
+                <constraint firstItem="DnC-iD-d9p" firstAttribute="top" secondItem="nFs-KK-XIO" secondAttribute="top" constant="72" id="K1r-Ap-Ucl"/>
                 <constraint firstItem="DnC-iD-d9p" firstAttribute="leading" secondItem="nFs-KK-XIO" secondAttribute="leading" constant="12" id="NNs-w5-PSM"/>
                 <constraint firstAttribute="bottom" secondItem="6Pa-ce-q4I" secondAttribute="bottom" constant="24" id="vWB-wl-7LZ"/>
                 <constraint firstAttribute="trailing" secondItem="DnC-iD-d9p" secondAttribute="trailing" constant="12" id="wtu-PT-bSb"/>
