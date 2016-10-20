@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func setTrapButtonTapped() {
-        
+        RootViewController.sharedInstance.pushTrapVC()
     }
     
     @IBAction func viewSnoopersButtonTapped() {

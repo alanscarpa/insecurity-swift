@@ -59,4 +59,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     func pushHowItWorksVC() {
         rootNavigationController.pushViewController(HowItWorksViewController(), animated: true)
     }
+    
+    func pushTrapVC() {
+        rootNavigationController.pushViewController(TrapViewController(), animated: true)
+    }
 }
