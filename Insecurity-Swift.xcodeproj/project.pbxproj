@@ -17,6 +17,7 @@
 		451CAF2B1DB835DE005430CE /* HowItWorksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF291DB835DE005430CE /* HowItWorksViewController.xib */; };
 		451CAF2F1DB842B3005430CE /* TrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF2D1DB842B3005430CE /* TrapViewController.swift */; };
 		451CAF301DB842B3005430CE /* TrapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF2E1DB842B3005430CE /* TrapViewController.xib */; };
+		451CAF331DB9A1C6005430CE /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF321DB9A1C6005430CE /* siren.mp3 */; };
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
 		4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		451CAF291DB835DE005430CE /* HowItWorksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HowItWorksViewController.xib; sourceTree = "<group>"; };
 		451CAF2D1DB842B3005430CE /* TrapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrapViewController.swift; sourceTree = "<group>"; };
 		451CAF2E1DB842B3005430CE /* TrapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrapViewController.xib; sourceTree = "<group>"; };
+		451CAF321DB9A1C6005430CE /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Trap;
 			sourceTree = "<group>";
 		};
+		451CAF311DB9A1B3005430CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				451CAF321DB9A1C6005430CE /* siren.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		452142071DAD638700FCBF62 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		452142121DAD638700FCBF62 /* Insecurity-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				451CAF311DB9A1B3005430CE /* Resources */,
 				452142131DAD638700FCBF62 /* AppDelegate.swift */,
 				452142251DAD64AC00FCBF62 /* View Controllers */,
 				451CAF231DB81C68005430CE /* Extensions */,
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451CAF221DB810EE005430CE /* SignupViewController.xib in Resources */,
+				451CAF331DB9A1C6005430CE /* siren.mp3 in Resources */,
 				4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */,
 				4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */,
 				451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */,

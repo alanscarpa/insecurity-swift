@@ -8,6 +8,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrapViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="bestResultsLabel" destination="kIw-b7-REh" id="5zJ-pk-d2i"/>
+                <outlet property="cancelButton" destination="tvP-lk-o5W" id="dmF-B6-lQa"/>
+                <outlet property="lockPhoneLabel" destination="DCk-gw-43p" id="8PZ-SK-ehv"/>
+                <outlet property="sayCheeseLabel" destination="Tdw-Rz-BMj" id="ERq-tY-hbV"/>
+                <outlet property="snoopingLabel" destination="6td-8t-e8r" id="pWx-79-cIc"/>
+                <outlet property="trapIsSetLabel" destination="pF9-tl-rM4" id="Ek6-nw-SeQ"/>
+                <outlet property="trustMeLabel" destination="n8A-BH-wEd" id="o7j-xb-hlh"/>
                 <outlet property="view" destination="b9T-kA-0Tr" id="HYT-HT-cy2"/>
             </connections>
         </placeholder>
