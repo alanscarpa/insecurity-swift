@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        // TODO: set status bar to white
+        // TODO: change bundle identifier and redownload new firebase plist
         FIRApp.configure()
         
         IQKeyboardManager.sharedManager().enable = true

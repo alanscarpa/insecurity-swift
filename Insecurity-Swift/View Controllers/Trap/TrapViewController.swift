@@ -37,6 +37,11 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        self.parseUserId = currentUser.objectId;
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pictureIsBeingTaken = false
+    }
+    
     deinit {
         unregisterForNotifications()
     }
@@ -72,16 +77,35 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         [.UIApplicationDidBecomeActive, .UIApplicationWillResignActive, .AVCaptureSessionDidStartRunning].forEach({ NotificationCenter.default.removeObserver(self, name: $0, object: nil) })
     }
     
-    func takePhoto() {
-        
+    func phoneDidLock() {
+        isTrapSet = true
+        trapIsSetLabel.isHidden = true
+        lockPhoneLabel.isHidden = true
+        cancelButton.isHidden = true
+        bestResultsLabel.isHidden = true
+        snoopingLabel.isHidden = false
+        trustMeLabel.isHidden = false
+        sayCheeseLabel.isHidden = false
     }
     
-    func phoneDidLock() {
-        
+    func takePhoto() {
+        if !pictureIsBeingTaken && isTrapSet {
+            pictureIsBeingTaken = true
+            present(imagePickerController, animated: true) {
+                self.imagePickerController.takePicture()
+                self.audioPlayer.play()
+            }
+        }
     }
     
     func cameraIsReady() {
         // todo: dont think is needed
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("did take pic!")
     }
     
     // MARK: - Actions
