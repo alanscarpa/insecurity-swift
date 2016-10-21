@@ -29,14 +29,16 @@ class HomeViewController: UIViewController {
         // TODO: clean up
         if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .authorized {
             RootViewController.sharedInstance.pushTrapVC()
-        } else if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .authorized  {
+        } else if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .denied || AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .restricted {
             self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
         } else {
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
-                if granted {
-                    RootViewController.sharedInstance.pushTrapVC()
-                } else {
-                    self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
+                OperationQueue.main.addOperation {
+                    if granted {
+                        RootViewController.sharedInstance.pushTrapVC()
+                    } else {
+                        self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
+                    }
                 }
             }
         }
