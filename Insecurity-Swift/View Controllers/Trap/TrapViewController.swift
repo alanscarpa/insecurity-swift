@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -17,6 +20,9 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var bustedPhoto = UIImage()
     var pictureFrameImageView = UIImageView()
     let audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "siren", ofType: "mp3")!))
+    
+    let storage = FIRStorage.storage()
+    let databaseRef = FIRDatabase.database().reference()
     
     @IBOutlet weak var trapIsSetLabel: UILabel!
     @IBOutlet weak var lockPhoneLabel: UILabel!
@@ -105,7 +111,30 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("did take pic!")
+        
+        guard let photoData = UIImageJPEGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage, 0.3) else { return }
+        
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        let fileName = databaseRef.child("users").child(userID).child("images").childByAutoId().key
+
+        
+        let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
+        let imagesRef = storageRef.child("images/\(userID)")
+        
+        let fileRef = imagesRef.child(fileName)
+        
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        let uploadTask = fileRef.put(photoData, metadata: metadata) { metadata, error in
+            if (error != nil) {
+                print(error)
+            } else {
+                let downloadURLString = metadata!.downloadURL()!.absoluteString
+                self.databaseRef.child("users").child(userID).child("images")
+                    .child(fileName).setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970])
+            }
+        }
     }
     
     // MARK: - Actions
