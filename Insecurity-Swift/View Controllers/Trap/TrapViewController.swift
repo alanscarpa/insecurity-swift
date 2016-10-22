@@ -111,13 +111,11 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         guard let photoData = UIImageJPEGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage, 0.3) else { return }
         
         let userID = FIRAuth.auth()!.currentUser!.uid
         let fileName = databaseRef.child("users").child(userID).child("images").childByAutoId().key
 
-        
         let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
         let imagesRef = storageRef.child("images/\(userID)")
         
@@ -126,13 +124,14 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        let uploadTask = fileRef.put(photoData, metadata: metadata) { metadata, error in
-            if (error != nil) {
-                print(error)
-            } else {
+        _ = fileRef.put(photoData, metadata: metadata) { metadata, error in
+            if error == nil {
                 let downloadURLString = metadata!.downloadURL()!.absoluteString
-                self.databaseRef.child("users").child(userID).child("images")
-                    .child(fileName).setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970])
+                self.databaseRef.child("users")
+                    .child(userID)
+                    .child("images")
+                    .child(fileName)
+                    .setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970])
             }
         }
     }
