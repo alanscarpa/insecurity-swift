@@ -26,19 +26,17 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func setTrapButtonTapped() {
-        // TODO: clean up
-        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .authorized {
-            RootViewController.sharedInstance.pushTrapVC()
-        } else if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .denied || AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .restricted {
-            self.presentCameraPermissionsAlert()
+        AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized ? pushTrapVC() : askForCameraPermission()
+    }
+    
+    private func askForCameraPermission() {
+        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .denied
+            || AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .restricted {
+            presentCameraPermissionsAlert()
         } else {
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
                 OperationQueue.main.addOperation {
-                    if granted {
-                        RootViewController.sharedInstance.pushTrapVC()
-                    } else {
-                        self.presentCameraPermissionsAlert()
-                    }
+                    granted ? self.pushTrapVC() : self.presentCameraPermissionsAlert()
                 }
             }
         }
@@ -46,6 +44,10 @@ class HomeViewController: UIViewController {
     
     private func presentCameraPermissionsAlert() {
         self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
+    }
+    
+    private func pushTrapVC() {
+        RootViewController.sharedInstance.pushTrapVC()
     }
     
     @IBAction func viewSnoopersButtonTapped() {
