@@ -51,7 +51,7 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private func setUpImagePickerController() {
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
-        imagePickerController.modalPresentationStyle = .currentContext
+        imagePickerController.modalPresentationStyle = .fullScreen
         imagePickerController.showsCameraControls = false
         imagePickerController.cameraDevice = .front
     }
