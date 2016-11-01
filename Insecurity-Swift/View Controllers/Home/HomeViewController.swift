@@ -7,22 +7,21 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 import AVFoundation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, FirebaseManagerDelegate {
 
     @IBOutlet weak var backgroundPatternImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseManager.sharedInstance.delegate = self
         setUpUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FirebaseManager.sharedInstance.listenForAuthStateChangesWithHandler(authStateChangedHandler)
+        FirebaseManager.sharedInstance.listenForAuthStateChanges()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,12 +74,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    // MARK: - Firebase Auth State Handler
+    // MARK: - FirebaseManagerDelegate
     
-    private func authStateChangedHandler(auth: FIRAuth, user: FIRUser?) -> Swift.Void {
-        if FirebaseManager.sharedInstance.currentUserIsSignedOut {
-            RootViewController.sharedInstance.popViewController()
-        }
+    func currentUserDidSignOut() {
+        RootViewController.sharedInstance.popViewController()
     }
-    
+
 }
