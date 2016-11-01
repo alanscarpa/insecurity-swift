@@ -27,8 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = RootViewController.sharedInstance
         window!.makeKeyAndVisible()
         
-        RootViewController.sharedInstance.goToLoginVC()
-        
+        // TODO: uncomment
+        // RootViewController.sharedInstance.goToLoginVC()
+        RootViewController.sharedInstance.goToHomeVC()
+
         return true
     }
 

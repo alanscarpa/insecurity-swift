@@ -26,6 +26,10 @@
 		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
 		45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F61DC8405300F82C26 /* FirebaseManager.swift */; };
 		45AD73FA1DC8477500F82C26 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F91DC8477500F82C26 /* Result.swift */; };
+		45FB5C0A1DC93B9800A61328 /* SnoopersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB5C081DC93B9800A61328 /* SnoopersViewController.swift */; };
+		45FB5C0B1DC93B9800A61328 /* SnoopersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FB5C091DC93B9800A61328 /* SnoopersViewController.xib */; };
+		45FB5C0E1DC93DA700A61328 /* SnoopersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB5C0C1DC93DA700A61328 /* SnoopersCollectionViewCell.swift */; };
+		45FB5C0F1DC93DA700A61328 /* SnoopersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45FB5C0D1DC93DA700A61328 /* SnoopersCollectionViewCell.xib */; };
 		9659332F465CAAFB228B33CF /* Pods_Insecurity_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,10 @@
 		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		45AD73F61DC8405300F82C26 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		45AD73F91DC8477500F82C26 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		45FB5C081DC93B9800A61328 /* SnoopersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnoopersViewController.swift; sourceTree = "<group>"; };
+		45FB5C091DC93B9800A61328 /* SnoopersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnoopersViewController.xib; sourceTree = "<group>"; };
+		45FB5C0C1DC93DA700A61328 /* SnoopersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnoopersCollectionViewCell.swift; sourceTree = "<group>"; };
+		45FB5C0D1DC93DA700A61328 /* SnoopersCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnoopersCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insecurity_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 		452142251DAD64AC00FCBF62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				45FB5C071DC93B7B00A61328 /* Snoopers */,
 				451CAF2C1DB84298005430CE /* Trap */,
 				451CAF271DB835C2005430CE /* How It Works */,
 				451CAF1E1DB810D6005430CE /* Signup */,
@@ -201,6 +210,17 @@
 				45AD73F91DC8477500F82C26 /* Result.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		45FB5C071DC93B7B00A61328 /* Snoopers */ = {
+			isa = PBXGroup;
+			children = (
+				45FB5C081DC93B9800A61328 /* SnoopersViewController.swift */,
+				45FB5C091DC93B9800A61328 /* SnoopersViewController.xib */,
+				45FB5C0C1DC93DA700A61328 /* SnoopersCollectionViewCell.swift */,
+				45FB5C0D1DC93DA700A61328 /* SnoopersCollectionViewCell.xib */,
+			);
+			path = Snoopers;
 			sourceTree = "<group>";
 		};
 		5FCFB291874977388055245F /* Frameworks */ = {
@@ -289,12 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				451CAF221DB810EE005430CE /* SignupViewController.xib in Resources */,
+				45FB5C0B1DC93B9800A61328 /* SnoopersViewController.xib in Resources */,
 				451CAF331DB9A1C6005430CE /* siren.mp3 in Resources */,
 				4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */,
 				4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */,
 				451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */,
 				451CAF2B1DB835DE005430CE /* HowItWorksViewController.xib in Resources */,
 				451CAF301DB842B3005430CE /* TrapViewController.xib in Resources */,
+				45FB5C0F1DC93DA700A61328 /* SnoopersCollectionViewCell.xib in Resources */,
 				4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */,
 				451CAF171DAD78D0005430CE /* HomeViewController.xib in Resources */,
 			);
@@ -361,10 +383,12 @@
 				45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
 				451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */,
+				45FB5C0E1DC93DA700A61328 /* SnoopersCollectionViewCell.swift in Sources */,
 				45AD73FA1DC8477500F82C26 /* Result.swift in Sources */,
 				451CAF2A1DB835DE005430CE /* HowItWorksViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
 				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,
+				45FB5C0A1DC93B9800A61328 /* SnoopersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

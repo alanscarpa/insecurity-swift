@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
     }
     
     @IBAction func viewSnoopersButtonTapped() {
-        
+        RootViewController.sharedInstance.pushSnoopersVC()
     }
     
     @IBAction func howItWorksButtonTapped() {

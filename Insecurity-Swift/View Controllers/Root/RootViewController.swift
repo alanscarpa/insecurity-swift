@@ -61,4 +61,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     func pushTrapVC() {
         rootNavigationController.pushViewController(TrapViewController(), animated: true)
     }
+    
+    func pushSnoopersVC() {
+        rootNavigationController.pushViewController(SnoopersViewController(), animated: true)
+    }
 }
