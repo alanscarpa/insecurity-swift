@@ -19,7 +19,21 @@ class FirebaseManager {
     let storage = FIRStorage.storage()
     let databaseRef = FIRDatabase.database().reference()
     
+    var currentUserIsSignedOut: Bool {
+        return FIRAuth.auth()?.currentUser == nil
+    }
+    
+    var authStateListener: FIRAuthStateDidChangeListenerHandle!
+    
     private init() {}
+    
+    func listenForAuthStateChangesWithHandler(_ handler: @escaping (FIRAuth, FIRUser?) -> Swift.Void) {
+        authStateListener = FIRAuth.auth()?.addStateDidChangeListener(handler)
+    }
+    
+    func stopListeningForAuthStateChanges() {
+        FIRAuth.auth()?.removeStateDidChangeListener(authStateListener)
+    }
     
     func signOutCurrentUser(completion: @escaping (Result<Void>) -> Void) {
         do {

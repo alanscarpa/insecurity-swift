@@ -18,7 +18,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        FIRAuth.auth()?.addStateDidChangeListener(authStateChangedHandler)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        FirebaseManager.sharedInstance.listenForAuthStateChangesWithHandler(authStateChangedHandler)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        FirebaseManager.sharedInstance.stopListeningForAuthStateChanges()
     }
     
     private func setUpUI() {
@@ -35,15 +44,15 @@ class HomeViewController: UIViewController {
             presentCameraPermissionsAlert()
         } else {
             AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
-                OperationQueue.main.addOperation {
-                    granted ? self.pushTrapVC() : self.presentCameraPermissionsAlert()
+                OperationQueue.main.addOperation { [weak self] in
+                    granted ? self?.pushTrapVC() : self?.presentCameraPermissionsAlert()
                 }
             }
         }
     }
     
     private func presentCameraPermissionsAlert() {
-        self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
+        present(UIAlertController.createSimpleAlert(withTitle: "Error", message: "You must give Insecurity camera permission in order to take photos of phone snoopers.  Please go to your Settings and enable Camera permission."), animated: true, completion: nil)
     }
     
     private func pushTrapVC() {
@@ -59,17 +68,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logoutButtonTapped() {
-        do {
-            try FIRAuth.auth()?.signOut()
-        } catch {
-            present(UIAlertController.createSimpleAlert(withTitle: "Error Logging Out", message: error.localizedDescription), animated: true, completion: nil)
+        FirebaseManager.sharedInstance.signOutCurrentUser { [weak self] result in
+            if let error = result.error {
+                self?.present(UIAlertController.createSimpleAlert(withTitle: "Error Logging Out", message: error.localizedDescription), animated: true, completion: nil)
+            }
         }
     }
     
-    // MARK: - Helpers
+    // MARK: - Firebase Auth State Handler
     
     private func authStateChangedHandler(auth: FIRAuth, user: FIRUser?) -> Swift.Void {
-        if auth.currentUser == nil {
+        if FirebaseManager.sharedInstance.currentUserIsSignedOut {
             RootViewController.sharedInstance.popViewController()
         }
     }
