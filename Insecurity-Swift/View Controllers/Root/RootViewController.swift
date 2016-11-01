@@ -39,8 +39,6 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     func goToLoginVC() {
-        // TODO: make sure to log out user every time
-        // Maybe log out when app goes to background (as long as it isnt called on lock screen)
         rootNavigationController.setViewControllers([LoginViewController()], animated: true)
     }
     

@@ -125,13 +125,31 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         metadata.contentType = "image/jpeg"
         
         _ = fileRef.put(photoData, metadata: metadata) { metadata, error in
-            if error == nil {
+            if error != nil {
+                present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
+                do {
+                    try FIRAuth.auth()?.signOut()
+                } catch {
+                   present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
+                }
+                RootViewController.sharedInstance.goToLoginVC()
+            } else {
                 let downloadURLString = metadata!.downloadURL()!.absoluteString
                 self.databaseRef.child("users")
                     .child(userID)
                     .child("images")
                     .child(fileName)
-                    .setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970])
+                    .setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970], withCompletionBlock: { error, ref in
+                        if error != nil {
+                            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
+                        }
+                        do {
+                            try FIRAuth.auth()?.signOut()
+                        } catch {
+                            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
+                        }
+                        RootViewController.sharedInstance.goToLoginVC()
+                    })
             }
         }
     }
