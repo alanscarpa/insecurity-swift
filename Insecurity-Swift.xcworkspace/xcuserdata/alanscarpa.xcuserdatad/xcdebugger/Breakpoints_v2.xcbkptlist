@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Trap/TrapViewController.swift"
-            timestampString = "498859766.447307"
+            timestampString = "499664532.4687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "registerForNotifications()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Trap/TrapViewController.swift"
-            timestampString = "498859766.447307"
+            timestampString = "499664532.4687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "phoneDidLock()"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "phoneWillLock()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Insecurity-Swift/View Controllers/Trap/TrapViewController.swift"
-            timestampString = "498859766.447307"
+            timestampString = "499664532.4687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

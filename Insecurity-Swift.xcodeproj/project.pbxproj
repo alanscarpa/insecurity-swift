@@ -24,6 +24,8 @@
 		452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142261DAD64ED00FCBF62 /* RootViewController.swift */; };
 		4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521422A1DAD676900FCBF62 /* LoginViewController.swift */; };
 		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
+		45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F61DC8405300F82C26 /* FirebaseManager.swift */; };
+		45AD73FA1DC8477500F82C26 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F91DC8477500F82C26 /* Result.swift */; };
 		9659332F465CAAFB228B33CF /* Pods_Insecurity_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		452142261DAD64ED00FCBF62 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4521422A1DAD676900FCBF62 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		45AD73F61DC8405300F82C26 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		45AD73F91DC8477500F82C26 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4F419C3522BE0994F3F1C6BF /* Pods-Insecurity-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		A932E37958A74B54B386B5F0 /* Pods_Insecurity_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insecurity_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8FF33C7502DA18FF32D4DE /* Pods-Insecurity-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insecurity-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insecurity-Swift/Pods-Insecurity-Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,10 +142,12 @@
 		452142121DAD638700FCBF62 /* Insecurity-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				451CAF311DB9A1B3005430CE /* Resources */,
 				452142131DAD638700FCBF62 /* AppDelegate.swift */,
+				45AD73F51DC8403600F82C26 /* Firebase */,
+				451CAF311DB9A1B3005430CE /* Resources */,
 				452142251DAD64AC00FCBF62 /* View Controllers */,
 				451CAF231DB81C68005430CE /* Extensions */,
+				45AD73F81DC8475900F82C26 /* Utilities */,
 				4521421A1DAD638700FCBF62 /* Assets.xcassets */,
 				4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */,
 				4521421F1DAD638700FCBF62 /* Info.plist */,
@@ -179,6 +185,22 @@
 				4521422B1DAD676900FCBF62 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		45AD73F51DC8403600F82C26 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				45AD73F61DC8405300F82C26 /* FirebaseManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		45AD73F81DC8475900F82C26 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45AD73F91DC8477500F82C26 /* Result.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		5FCFB291874977388055245F /* Frameworks */ = {
@@ -336,8 +358,10 @@
 				451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */,
 				451CAF2F1DB842B3005430CE /* TrapViewController.swift in Sources */,
 				451CAF251DB81C88005430CE /* UIAlertController+Insecurity.swift in Sources */,
+				45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,
 				451CAF211DB810EE005430CE /* SignupViewController.swift in Sources */,
+				45AD73FA1DC8477500F82C26 /* Result.swift in Sources */,
 				451CAF2A1DB835DE005430CE /* HowItWorksViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
 				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,

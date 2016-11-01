@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -8,7 +8,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrapViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
-                <outlet property="bestResultsLabel" destination="kIw-b7-REh" id="5zJ-pk-d2i"/>
                 <outlet property="cancelButton" destination="tvP-lk-o5W" id="dmF-B6-lQa"/>
                 <outlet property="lockPhoneLabel" destination="DCk-gw-43p" id="8PZ-SK-ehv"/>
                 <outlet property="sayCheeseLabel" destination="Tdw-Rz-BMj" id="ERq-tY-hbV"/>
@@ -59,11 +58,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*For best results, disable your passcode.  Insecurity can not take photos if snoopers do not know your passcode." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kIw-b7-REh">
-                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -71,7 +65,6 @@
                 <constraint firstAttribute="centerX" secondItem="pF9-tl-rM4" secondAttribute="centerX" id="67d-KZ-DMm"/>
                 <constraint firstItem="tvP-lk-o5W" firstAttribute="top" secondItem="DCk-gw-43p" secondAttribute="bottom" multiplier="1.4" id="7fk-VI-JCD"/>
                 <constraint firstItem="6td-8t-e8r" firstAttribute="centerX" secondItem="R9r-K6-Gsb" secondAttribute="centerX" id="DQP-KB-M2P"/>
-                <constraint firstAttribute="trailing" secondItem="kIw-b7-REh" secondAttribute="trailing" constant="12" id="FTO-qC-mOz"/>
                 <constraint firstAttribute="width" secondItem="R9r-K6-Gsb" secondAttribute="width" id="KQc-Pa-34C"/>
                 <constraint firstItem="R9r-K6-Gsb" firstAttribute="centerX" secondItem="tvP-lk-o5W" secondAttribute="centerX" id="MYc-D7-3m8"/>
                 <constraint firstItem="Tdw-Rz-BMj" firstAttribute="top" secondItem="n8A-BH-wEd" secondAttribute="bottom" constant="33" id="N3S-WP-1rP"/>
@@ -80,15 +73,12 @@
                 <constraint firstItem="DCk-gw-43p" firstAttribute="top" secondItem="pF9-tl-rM4" secondAttribute="bottom" multiplier="1.1" id="Qn8-4p-gMs"/>
                 <constraint firstItem="Tdw-Rz-BMj" firstAttribute="centerX" secondItem="R9r-K6-Gsb" secondAttribute="centerX" id="Uys-FU-DSo"/>
                 <constraint firstItem="n8A-BH-wEd" firstAttribute="top" secondItem="6td-8t-e8r" secondAttribute="bottom" constant="33" id="X5N-0F-zxc"/>
-                <constraint firstItem="kIw-b7-REh" firstAttribute="centerX" secondItem="DCk-gw-43p" secondAttribute="centerX" id="cTD-3z-L4o"/>
                 <constraint firstAttribute="centerX" secondItem="R9r-K6-Gsb" secondAttribute="centerX" id="cTl-e9-33X"/>
                 <constraint firstItem="n8A-BH-wEd" firstAttribute="centerX" secondItem="R9r-K6-Gsb" secondAttribute="centerX" id="cjT-Qf-u9j"/>
                 <constraint firstAttribute="height" secondItem="R9r-K6-Gsb" secondAttribute="height" id="ejf-53-52I"/>
-                <constraint firstItem="kIw-b7-REh" firstAttribute="leading" secondItem="b9T-kA-0Tr" secondAttribute="leading" constant="12" id="oNM-IK-ATy"/>
                 <constraint firstItem="6td-8t-e8r" firstAttribute="centerY" secondItem="R9r-K6-Gsb" secondAttribute="centerY" multiplier="0.25" id="qet-WK-2ow"/>
                 <constraint firstAttribute="centerX" secondItem="DCk-gw-43p" secondAttribute="centerX" id="swO-IM-IU5"/>
                 <constraint firstItem="DCk-gw-43p" firstAttribute="leading" secondItem="b9T-kA-0Tr" secondAttribute="leading" constant="20" id="v7a-eY-YzM"/>
-                <constraint firstItem="kIw-b7-REh" firstAttribute="top" secondItem="DCk-gw-43p" secondAttribute="bottom" constant="24.5" id="ysU-87-iVR"/>
                 <constraint firstAttribute="trailing" secondItem="DCk-gw-43p" secondAttribute="trailing" constant="20" id="zoB-Sv-4l8"/>
             </constraints>
             <variation key="default">

@@ -8,25 +8,16 @@
 
 import UIKit
 import AVFoundation
-import FirebaseStorage
-import FirebaseAuth
-import FirebaseDatabase
 
 class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var pictureIsBeingTaken = false
-    var isTrapSet = false
     let imagePickerController = UIImagePickerController()
     var bustedPhoto = UIImage()
     var pictureFrameImageView = UIImageView()
-    let audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "siren", ofType: "mp3")!))
-    
-    let storage = FIRStorage.storage()
-    let databaseRef = FIRDatabase.database().reference()
+    var audioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var trapIsSetLabel: UILabel!
     @IBOutlet weak var lockPhoneLabel: UILabel!
-    @IBOutlet weak var bestResultsLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var snoopingLabel: UILabel!
@@ -38,14 +29,6 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         setUpImagePickerController()
         setUpAudioPlayer()
         registerForNotifications()
-        
-//        PFUser *currentUser = [PFUser currentUser];
-//        self.parseUserId = currentUser.objectId;
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        pictureIsBeingTaken = false
     }
     
     deinit {
@@ -63,93 +46,61 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     private func setUpAudioPlayer() {
-        audioPlayer.prepareToPlay()
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "siren", ofType: "mp3")!))
         } catch {
             present(UIAlertController.createSimpleAlert(withTitle: "Sound Error", message: error.localizedDescription), animated: true, completion: nil)
         }
+        audioPlayer.prepareToPlay()
     }
     
     // MARK: - Notifications
     
     private func registerForNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(takePhoto), name: .UIApplicationDidBecomeActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(phoneDidLock), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(cameraIsReady), name: .AVCaptureSessionDidStartRunning, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(phoneWillLock), name: .UIApplicationWillResignActive, object: nil)
     }
     
     private func unregisterForNotifications() {
-        [.UIApplicationDidBecomeActive, .UIApplicationWillResignActive, .AVCaptureSessionDidStartRunning].forEach({ NotificationCenter.default.removeObserver(self, name: $0, object: nil) })
+        [.UIApplicationDidBecomeActive, .UIApplicationWillResignActive].forEach({ NotificationCenter.default.removeObserver(self, name: $0, object: nil) })
     }
     
-    func phoneDidLock() {
-        isTrapSet = true
-        trapIsSetLabel.isHidden = true
-        lockPhoneLabel.isHidden = true
-        cancelButton.isHidden = true
-        bestResultsLabel.isHidden = true
-        snoopingLabel.isHidden = false
-        trustMeLabel.isHidden = false
-        sayCheeseLabel.isHidden = false
+    func phoneWillLock() {
+        [trapIsSetLabel, lockPhoneLabel, cancelButton].forEach({ $0.isHidden = true })
+        [snoopingLabel, trustMeLabel, sayCheeseLabel].forEach({ $0.isHidden = false })
     }
     
     func takePhoto() {
-        if !pictureIsBeingTaken && isTrapSet {
-            pictureIsBeingTaken = true
-            present(imagePickerController, animated: true) {
-                self.imagePickerController.takePicture()
-                self.audioPlayer.play()
-            }
+        present(imagePickerController, animated: true) {
+            self.imagePickerController.takePicture()
+            self.audioPlayer.play()
         }
-    }
-    
-    func cameraIsReady() {
-        // todo: dont think is needed
     }
     
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let photoData = UIImageJPEGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage, 0.3) else { return }
+        guard let photoData = UIImageJPEGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage, 0.3) else {
+            completeTrapPhotoProcess()
+            return
+        }
         
-        let userID = FIRAuth.auth()!.currentUser!.uid
-        let fileName = databaseRef.child("users").child(userID).child("images").childByAutoId().key
-
-        let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
-        let imagesRef = storageRef.child("images/\(userID)")
-        
-        let fileRef = imagesRef.child(fileName)
-        
-        let metadata = FIRStorageMetadata()
-        metadata.contentType = "image/jpeg"
-        
-        _ = fileRef.put(photoData, metadata: metadata) { metadata, error in
-            if error != nil {
-                present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
-                do {
-                    try FIRAuth.auth()?.signOut()
-                } catch {
-                   present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
-                }
+        FirebaseManager.sharedInstance.put(photoData: photoData) { [weak self] result in
+            if let error = result.error {
+               self?.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil) 
+            }
+            self?.completeTrapPhotoProcess()
+        }
+    }
+    
+    func completeTrapPhotoProcess() {
+        FirebaseManager.sharedInstance.signOutCurrentUser { [weak self] result in
+            if let error = result.error {
+                self?.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            }
+            self?.imagePickerController.dismiss(animated: false) {
                 RootViewController.sharedInstance.goToLoginVC()
-            } else {
-                let downloadURLString = metadata!.downloadURL()!.absoluteString
-                self.databaseRef.child("users")
-                    .child(userID)
-                    .child("images")
-                    .child(fileName)
-                    .setValue(["downloadURL" : downloadURLString, "date" : NSDate().timeIntervalSince1970], withCompletionBlock: { error, ref in
-                        if error != nil {
-                            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
-                        }
-                        do {
-                            try FIRAuth.auth()?.signOut()
-                        } catch {
-                            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error?.localizedDescription), animated: true, completion: nil)
-                        }
-                        RootViewController.sharedInstance.goToLoginVC()
-                    })
             }
         }
     }
