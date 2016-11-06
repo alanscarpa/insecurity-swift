@@ -8,13 +8,19 @@
 
 import UIKit
 
-class SnoopersViewController: UIViewController {
+class SnoopersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     let collectionViewCellReuseIdentifier = "SnoopersCollectionViewCell"
+    let maxNumberOfPhotosPerRow: CGFloat = 4
+    var collectionViewCellSize: CGSize {
+        return CGSize(width: (UIScreen.main.bounds.width / maxNumberOfPhotosPerRow) - (maxNumberOfPhotosPerRow - 1), height: UIScreen.main.bounds.height / maxNumberOfPhotosPerRow)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Snoopers"
         RootViewController.sharedInstance.showNavigationBar = true
         setUpCollectionView()
     }
@@ -23,11 +29,15 @@ class SnoopersViewController: UIViewController {
         super.viewWillDisappear(animated)
         RootViewController.sharedInstance.showNavigationBar = false
     }
-    
 
     func setUpCollectionView() {
         let snoopersCellNib = UINib(nibName: collectionViewCellReuseIdentifier, bundle: nil)
         collectionView.register(snoopersCellNib, forCellWithReuseIdentifier: collectionViewCellReuseIdentifier)
+        
+        collectionViewFlowLayout.itemSize = collectionViewCellSize
+        collectionViewFlowLayout.minimumLineSpacing = maxNumberOfPhotosPerRow
+        collectionViewFlowLayout.minimumInteritemSpacing = maxNumberOfPhotosPerRow / 2
+
     }
     
     // MARK: - UICollectionViewDataSource
