@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        RootViewController.sharedInstance.showNavigationBar = false
         FirebaseManager.sharedInstance.listenForAuthStateChanges()
     }
     
@@ -71,6 +72,7 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
             if let error = result.error {
                 self?.present(UIAlertController.createSimpleAlert(withTitle: "Error Logging Out", message: error.localizedDescription), animated: true, completion: nil)
             }
+            ImageLoader.sharedInstance.clearImages()
         }
     }
     

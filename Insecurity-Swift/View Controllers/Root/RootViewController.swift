@@ -65,4 +65,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     func pushSnoopersVC() {
         rootNavigationController.pushViewController(SnoopersViewController(), animated: true)
     }
+    
+    func pushPhotoVCWithImage(image: UIImage) {
+        let photoVC = PhotoViewController()
+        photoVC.configureWithImage(image: image)
+        rootNavigationController.pushViewController(photoVC, animated: true)
+    }
 }

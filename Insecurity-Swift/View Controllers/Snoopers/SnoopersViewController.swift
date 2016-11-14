@@ -27,11 +27,6 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
         ImageLoader.sharedInstance.downloadAllImages()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        RootViewController.sharedInstance.showNavigationBar = false
-    }
-
     func setUpCollectionView() {
         let snoopersCellNib = UINib(nibName: collectionViewCellReuseIdentifier, bundle: nil)
         collectionView.register(snoopersCellNib, forCellWithReuseIdentifier: collectionViewCellReuseIdentifier)
@@ -57,7 +52,8 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let image = ImageLoader.sharedInstance.images[indexPath.row].image ?? UIImage()
+        RootViewController.sharedInstance.pushPhotoVCWithImage(image: image)
     }
     
     // MARK: - ImageLoaderDelegate

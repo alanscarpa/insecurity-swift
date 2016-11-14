@@ -33,6 +33,11 @@ class ImageLoader {
         }
     }
     
+    func clearImages() {
+        imageData = [FBImageData]()
+        images = [FBImageData]()
+    }
+    
     private func downloadImagesFromFirebase() {
         let processGroup = DispatchGroup()
         var error: Error?
