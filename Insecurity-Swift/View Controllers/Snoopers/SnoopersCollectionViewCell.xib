@@ -13,8 +13,22 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jvm-uj-qMQ">
+                        <color key="backgroundColor" red="0.39021381579999997" green="0.13430304279999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                </subviews>
             </view>
             <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="jvm-uj-qMQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cmc-rn-Lsw"/>
+                <constraint firstItem="jvm-uj-qMQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gxe-LQ-rXC"/>
+                <constraint firstAttribute="trailing" secondItem="jvm-uj-qMQ" secondAttribute="trailing" id="oZn-b2-GbC"/>
+                <constraint firstAttribute="bottom" secondItem="jvm-uj-qMQ" secondAttribute="bottom" id="rkp-44-KuD"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="jvm-uj-qMQ" id="u0U-pV-BBk"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

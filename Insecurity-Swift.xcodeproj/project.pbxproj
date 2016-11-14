@@ -18,6 +18,7 @@
 		451CAF2F1DB842B3005430CE /* TrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CAF2D1DB842B3005430CE /* TrapViewController.swift */; };
 		451CAF301DB842B3005430CE /* TrapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF2E1DB842B3005430CE /* TrapViewController.xib */; };
 		451CAF331DB9A1C6005430CE /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 451CAF321DB9A1C6005430CE /* siren.mp3 */; };
+		451EDE971DD9281200150D5C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451EDE961DD9281200150D5C /* ImageLoader.swift */; };
 		452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142131DAD638700FCBF62 /* AppDelegate.swift */; };
 		4521421B1DAD638700FCBF62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4521421A1DAD638700FCBF62 /* Assets.xcassets */; };
 		4521421E1DAD638700FCBF62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4521421C1DAD638700FCBF62 /* LaunchScreen.storyboard */; };
@@ -46,6 +47,7 @@
 		451CAF2D1DB842B3005430CE /* TrapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrapViewController.swift; sourceTree = "<group>"; };
 		451CAF2E1DB842B3005430CE /* TrapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrapViewController.xib; sourceTree = "<group>"; };
 		451CAF321DB9A1C6005430CE /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
+		451EDE961DD9281200150D5C /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		452142101DAD638700FCBF62 /* Insecurity-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insecurity-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452142131DAD638700FCBF62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4521421A1DAD638700FCBF62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				45AD73F91DC8477500F82C26 /* Result.swift */,
+				451EDE961DD9281200150D5C /* ImageLoader.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
 				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,
 				45FB5C0A1DC93B9800A61328 /* SnoopersViewController.swift in Sources */,
+				451EDE971DD9281200150D5C /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         
         // TODO: uncomment
-        // RootViewController.sharedInstance.goToLoginVC()
-        RootViewController.sharedInstance.goToHomeVC()
+        RootViewController.sharedInstance.goToLoginVC()
+        //RootViewController.sharedInstance.goToHomeVC()
 
         return true
     }

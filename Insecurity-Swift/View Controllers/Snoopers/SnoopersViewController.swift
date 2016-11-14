@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SnoopersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SnoopersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ImageLoaderDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -23,6 +23,8 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
         title = "Snoopers"
         RootViewController.sharedInstance.showNavigationBar = true
         setUpCollectionView()
+        ImageLoader.sharedInstance.delegate = self
+        ImageLoader.sharedInstance.downloadAllImages()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,11 +45,12 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return ImageLoader.sharedInstance.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellReuseIdentifier, for: indexPath) as! SnoopersCollectionViewCell
+        cell.configureWithImage(image: ImageLoader.sharedInstance.images[indexPath.row].image)
         return cell
     }
     
@@ -55,6 +58,16 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+    
+    // MARK: - ImageLoaderDelegate
+    
+    func finishedDownloadingImages(error: Error?) {
+        if let error = error {
+            present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
+        } else {
+            collectionView.reloadData()
+        }
     }
 
 }

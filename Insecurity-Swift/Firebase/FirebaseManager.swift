@@ -86,4 +86,48 @@ class FirebaseManager {
             }
         }
     }
+    
+    func getPhoto(url: URL, completion: @escaping (Result<UIImage>) -> Void) {
+        //let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
+        //let userID = FIRAuth.auth()!.currentUser!.uid
+        
+        //let imagesRef = storageRef.child("images/\(userID)")
+        
+        let httpsReference = storage.reference(forURL: url.absoluteString)
+        httpsReference.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
+            if error != nil {
+                completion(.Failure(error!))
+            } else if let data = data, let image = UIImage(data: data) {
+                completion(.Success(image))
+            }
+        }
+    }
+    
+    
+    func getCurrentUserImageURLs(completion: @escaping (Result<[FBImageData]>) -> Void) {
+        var imageObjects = [FBImageData]()
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        databaseRef.child("users").child(userID).child("images").observeSingleEvent(of: .value, with: { (snapshot) in
+            let allValues = snapshot.value as! NSDictionary
+            for (_, value) in allValues {
+                let valueDictionary = value as! NSDictionary
+                let urlString = valueDictionary["downloadURL"] as? String ?? ""
+                let dateDouble = valueDictionary["date"] as? Double ?? 0
+
+                let url = URL(string: urlString)
+                let date = Date(timeIntervalSince1970: TimeInterval(dateDouble))
+                let imageObject = FBImageData(url: url, date: date, image: nil)
+                imageObjects.append(imageObject)
+            }
+            completion(.Success(imageObjects))
+        }) { (error) in
+            completion(.Failure(error))
+        }
+    }
+}
+
+struct FBImageData {
+    var url: URL!
+    var date = Date()
+    var image: UIImage?
 }

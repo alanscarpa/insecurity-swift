@@ -9,10 +9,11 @@
 import UIKit
 
 class SnoopersCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureWithImage(image: UIImage?) {
+        imageView.image = image
     }
 
 }
