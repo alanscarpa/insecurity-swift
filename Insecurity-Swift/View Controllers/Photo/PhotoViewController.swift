@@ -10,14 +10,14 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    private var image = UIImage()
+    private var imageData = FBImageData()
     
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Photo"
-        photoImageView.image = image
+        photoImageView.image = imageData.image
         setUpNavigationController()
     }
     
@@ -35,7 +35,7 @@ class PhotoViewController: UIViewController {
     }
 
     func shareButtonTapped() {
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [imageData.image], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
     
@@ -43,8 +43,8 @@ class PhotoViewController: UIViewController {
         
     }
     
-    func configureWithImage(image: UIImage) {
-        self.image = image
+    func configureWithImageData(imageData: FBImageData) {
+        self.imageData = imageData
     }
 
 }

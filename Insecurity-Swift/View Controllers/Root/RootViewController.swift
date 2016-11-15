@@ -76,9 +76,9 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         rootNavigationController.pushViewController(SnoopersViewController(), animated: true)
     }
     
-    func pushPhotoVCWithImage(image: UIImage) {
+    func pushPhotoVCWithImageData(imageData: FBImageData) {
         let photoVC = PhotoViewController()
-        photoVC.configureWithImage(image: image)
+        photoVC.configureWithImageData(imageData: imageData)
         rootNavigationController.pushViewController(photoVC, animated: true)
     }
 }

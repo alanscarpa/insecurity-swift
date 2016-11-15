@@ -55,8 +55,8 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let image = ImageLoader.sharedInstance.images[indexPath.row].image ?? UIImage()
-        RootViewController.sharedInstance.pushPhotoVCWithImage(image: image)
+        let imageData = ImageLoader.sharedInstance.images[indexPath.row]
+        RootViewController.sharedInstance.pushPhotoVCWithImageData(imageData: imageData)
     }
     
     // MARK: - ImageLoaderDelegate
