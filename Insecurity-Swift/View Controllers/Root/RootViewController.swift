@@ -12,10 +12,16 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
 
     static let sharedInstance = RootViewController()
     
-    let rootNavigationController = UINavigationController()
+    private let rootNavigationController = UINavigationController()
     var showNavigationBar = false {
         didSet {
             rootNavigationController.setNavigationBarHidden(!showNavigationBar, animated: true)
+        }
+    }
+    
+    var showToolBar = false {
+        didSet {
+            rootNavigationController.setToolbarHidden(!showToolBar, animated: true)
         }
     }
     
@@ -32,6 +38,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         
         // TODO: import purelayout instead of doing this, maybe
         rootNavigationController.view.frame = super.view.frame
+    }
+    
+    func addBottomToolBarItems(shareButton: UIBarButtonItem, deleteButton: UIBarButtonItem) {
+        setToolbarItems([shareButton, deleteButton], animated: true)
     }
     
     func popViewController() {
