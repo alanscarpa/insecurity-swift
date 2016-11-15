@@ -25,7 +25,9 @@ class ImageLoader {
         FirebaseManager.sharedInstance.getCurrentUserImageURLs { [weak self] result in
             switch result {
             case .Success(let imageData):
-                self?.imageData = imageData
+                if let imageData = imageData {
+                    self?.imageData = imageData
+                }
                 self?.downloadImagesFromFirebase()
             case .Failure(let error):
                 self?.delegate?.finishedDownloadingImages(error: error)

@@ -24,6 +24,10 @@ class FirebaseManager {
     let storage = FIRStorage.storage()
     let databaseRef = FIRDatabase.database().reference()
     
+    var currentUserIsSignedIn: Bool {
+        return FIRAuth.auth()?.currentUser != nil
+    }
+    
     private var currentUserIsSignedOut: Bool {
         return FIRAuth.auth()?.currentUser == nil
     }
@@ -56,7 +60,7 @@ class FirebaseManager {
     }
     
     func put(photoData: Data, completion: @escaping (Result<Void>) -> Void) {
-        let userID = FIRAuth.auth()!.currentUser!.uid
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
         let fileName = databaseRef.child("users").child(userID).child("images").childByAutoId().key
         
         let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
@@ -88,11 +92,6 @@ class FirebaseManager {
     }
     
     func getPhoto(url: URL, completion: @escaping (Result<UIImage>) -> Void) {
-        //let storageRef = storage.reference(forURL: "gs://insecurity-40a93.appspot.com")
-        //let userID = FIRAuth.auth()!.currentUser!.uid
-        
-        //let imagesRef = storageRef.child("images/\(userID)")
-        
         let httpsReference = storage.reference(forURL: url.absoluteString)
         httpsReference.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
             if error != nil {
@@ -104,10 +103,14 @@ class FirebaseManager {
     }
     
     
-    func getCurrentUserImageURLs(completion: @escaping (Result<[FBImageData]>) -> Void) {
+    func getCurrentUserImageURLs(completion: @escaping (Result<[FBImageData]?>) -> Void) {
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
         var imageObjects = [FBImageData]()
-        let userID = FIRAuth.auth()!.currentUser!.uid
         databaseRef.child("users").child(userID).child("images").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard snapshot.exists() else {
+                completion(.Success(nil))
+                return
+            }
             let allValues = snapshot.value as! NSDictionary
             for (_, value) in allValues {
                 let valueDictionary = value as! NSDictionary

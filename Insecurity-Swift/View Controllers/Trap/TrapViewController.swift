@@ -72,16 +72,24 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func takePhoto() {
-        present(imagePickerController, animated: true) {
-            self.imagePickerController.takePicture()
-            self.audioPlayer.play()
+        guard FirebaseManager.sharedInstance.currentUserIsSignedIn else { return }
+        guard self.isViewLoaded && self.view.window != nil else { return }
+        guard UIApplication.shared.applicationState == .active else { return }
+        present(imagePickerController, animated: true) { [weak self] in
+            guard let strongSelf = self else { self?.completeTrapPhotoProcess(); return }
+            guard UIApplication.shared.applicationState == .active else { self?.completeTrapPhotoProcess(); return }
+            strongSelf.imagePickerController.takePicture()
+            strongSelf.audioPlayer.play()
         }
     }
     
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let photoData = UIImageJPEGRepresentation(info[UIImagePickerControllerOriginalImage] as! UIImage, 0.3) else {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { completeTrapPhotoProcess()
+            return
+        }
+        guard let photoData = UIImageJPEGRepresentation(image, 0.3) else {
             completeTrapPhotoProcess()
             return
         }

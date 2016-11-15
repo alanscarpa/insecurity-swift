@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SnoopersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ImageLoaderDelegate {
 
@@ -23,6 +24,8 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
         title = "Snoopers"
         RootViewController.sharedInstance.showNavigationBar = true
         setUpCollectionView()
+        
+        SVProgressHUD.show()
         ImageLoader.sharedInstance.delegate = self
         ImageLoader.sharedInstance.downloadAllImages()
     }
@@ -59,6 +62,7 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     // MARK: - ImageLoaderDelegate
     
     func finishedDownloadingImages(error: Error?) {
+        SVProgressHUD.dismiss()
         if let error = error {
             present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
         } else {
