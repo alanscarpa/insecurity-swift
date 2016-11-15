@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PhotoViewController: UIViewController {
 
@@ -40,7 +41,18 @@ class PhotoViewController: UIViewController {
     }
     
     func deleteButtonTapped() {
-        
+        let confirmationAlert = UIAlertController.createDeleteAlert(withTitle: "Delete Photo?", message: "Are you sure you want to delete this photo?") { _ in
+            SVProgressHUD.show()
+            FirebaseManager.sharedInstance.deleteImage(imageData: self.imageData) { [weak self] result in
+                SVProgressHUD.dismiss()
+                if let error = result.error {
+                    self?.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true)
+                } else {
+                    RootViewController.sharedInstance.popViewController()
+                }
+            }
+        }
+        present(confirmationAlert, animated: true, completion: nil)
     }
     
     func configureWithImageData(imageData: FBImageData) {

@@ -102,6 +102,28 @@ class FirebaseManager {
         }
     }
     
+    func deleteImage(imageData: FBImageData, completion: @escaping (Result<Void>) -> Void) {
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
+        let httpsReference = storage.reference(forURL: imageData.url.absoluteString)
+        httpsReference.delete { [weak self] error in
+            if let error = error {
+                completion(.Failure(error))
+            } else {
+                self?.databaseRef.child("users")
+                    .child(userID)
+                    .child("images")
+                    .child(imageData.databaseKey).removeValue { error, ref in
+                        if let error = error {
+                            completion(.Failure(error))
+                        } else {
+                            ImageLoader.sharedInstance.removeImageData(imageDataToRemove: imageData)
+                            completion(.Success())
+                        }
+                    }
+            }
+        }
+    }
+    
     
     func getCurrentUserImageURLs(completion: @escaping (Result<[FBImageData]?>) -> Void) {
         guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
@@ -112,14 +134,14 @@ class FirebaseManager {
                 return
             }
             let allValues = snapshot.value as! NSDictionary
-            for (_, value) in allValues {
+            for (key, value) in allValues {
                 let valueDictionary = value as! NSDictionary
                 let urlString = valueDictionary["downloadURL"] as? String ?? ""
                 let dateDouble = valueDictionary["date"] as? Double ?? 0
 
                 let url = URL(string: urlString)
                 let date = Date(timeIntervalSince1970: TimeInterval(dateDouble))
-                let imageObject = FBImageData(url: url, date: date, image: nil)
+                let imageObject = FBImageData(url: url, databaseKey: key as! String, date: date, image: nil)
                 imageObjects.append(imageObject)
             }
             completion(.Success(imageObjects))
@@ -131,6 +153,7 @@ class FirebaseManager {
 
 struct FBImageData {
     var url: URL!
+    var databaseKey = ""
     var date = Date()
     var image: UIImage?
 }

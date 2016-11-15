@@ -27,7 +27,16 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         SVProgressHUD.show()
         ImageLoader.sharedInstance.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         ImageLoader.sharedInstance.downloadAllImages()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if SVProgressHUD.isVisible() { SVProgressHUD.dismiss() }
     }
 
     func setUpCollectionView() {

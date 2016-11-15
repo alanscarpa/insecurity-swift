@@ -15,4 +15,13 @@ extension UIAlertController {
         alertController.addAction(action)
         return alertController
     }
+    
+    static func createDeleteAlert(withTitle title: String, message: String, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let action = UIAlertAction(title: "Delete", style: .destructive, handler: handler)
+        alertController.addAction(cancel)
+        alertController.addAction(action)
+        return alertController
+    }
 }

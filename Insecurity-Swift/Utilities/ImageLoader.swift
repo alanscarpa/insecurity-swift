@@ -21,6 +21,13 @@ class ImageLoader {
     private var imageData = [FBImageData]()
     var images = [FBImageData]()
     
+    func removeImageData(imageDataToRemove: FBImageData) {
+        guard let imageDataIndex = imageData.index(where: { $0.databaseKey == imageDataToRemove.databaseKey }) else { return }
+        guard let imagesIndex = images.index(where: { $0.databaseKey == imageDataToRemove.databaseKey }) else { return }
+        imageData.remove(at: imageDataIndex)
+        images.remove(at: imagesIndex)
+    }
+    
     func downloadAllImages() {
         FirebaseManager.sharedInstance.getCurrentUserImageURLs { [weak self] result in
             switch result {
@@ -49,7 +56,7 @@ class ImageLoader {
             FirebaseManager.sharedInstance.getPhoto(url: data.url, completion: { [weak self] result in
                 switch result {
                 case .Success(let image):
-                    let imageData = FBImageData(url: data.url, date: data.date, image: image)
+                    let imageData = FBImageData(url: data.url, databaseKey: data.databaseKey, date: data.date, image: image)
                     self?.images.append(imageData)
                 case .Failure(let imageDownloadError):
                     error = imageDownloadError
