@@ -33,9 +33,10 @@ class PhotoViewController: UIViewController {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         setToolbarItems([shareButton, spacer, deleteButton], animated: true)
     }
-    
+
     func shareButtonTapped() {
-        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
     }
     
     func deleteButtonTapped() {
