@@ -42,6 +42,7 @@ class ImageLoader {
         let processGroup = DispatchGroup()
         var error: Error?
         for data in imageData {
+            guard !images.contains(where: { $0.url == data.url }) else { continue }
             processGroup.enter()
             FirebaseManager.sharedInstance.getPhoto(url: data.url, completion: { [weak self] result in
                 switch result {

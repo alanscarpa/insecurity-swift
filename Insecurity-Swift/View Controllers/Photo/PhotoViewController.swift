@@ -18,6 +18,15 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         title = "Photo"
         photoImageView.image = image
+        setUpNavigationController()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        RootViewController.sharedInstance.showToolBar = false
+    }
+    
+    private func setUpNavigationController() {
         RootViewController.sharedInstance.showToolBar = true
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonTapped))
@@ -31,11 +40,6 @@ class PhotoViewController: UIViewController {
     
     func deleteButtonTapped() {
         
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        RootViewController.sharedInstance.showToolBar = false
     }
     
     func configureWithImage(image: UIImage) {
