@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = RootViewController.sharedInstance
         window!.makeKeyAndVisible()
         
-        // TODO: uncomment
         RootViewController.sharedInstance.goToLoginVC()
-        //RootViewController.sharedInstance.goToHomeVC()
-
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.insBlue]
+        UINavigationBar.appearance().tintColor = UIColor.insBlue
+        
         return true
     }
 

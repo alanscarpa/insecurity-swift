@@ -17,8 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3e-5q-ibU">
+                    <color key="backgroundColor" red="0.17391428349999999" green="0.59988039729999998" blue="0.8293479681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="siM-hS-75L">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="K4h-OR-dPt">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -35,8 +38,12 @@
             <constraints>
                 <constraint firstItem="siM-hS-75L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AmY-Jj-90T"/>
                 <constraint firstAttribute="bottom" secondItem="siM-hS-75L" secondAttribute="bottom" id="EgQ-Si-wza"/>
+                <constraint firstItem="z3e-5q-ibU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RBr-gB-vVh"/>
                 <constraint firstItem="siM-hS-75L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XTJ-d5-Uhm"/>
                 <constraint firstAttribute="trailing" secondItem="siM-hS-75L" secondAttribute="trailing" id="Ybs-Fz-lHj"/>
+                <constraint firstAttribute="trailing" secondItem="z3e-5q-ibU" secondAttribute="trailing" id="ehr-kb-asd"/>
+                <constraint firstItem="z3e-5q-ibU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f1h-ec-eeY"/>
+                <constraint firstAttribute="bottom" secondItem="z3e-5q-ibU" secondAttribute="bottom" id="wC8-N5-SDp"/>
             </constraints>
         </view>
     </objects>

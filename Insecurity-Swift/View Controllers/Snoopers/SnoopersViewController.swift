@@ -40,6 +40,7 @@ class SnoopersViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     func setUpCollectionView() {
+        collectionView.backgroundColor = UIColor(patternImage: UIImage(named: "homeBg")!)
         let snoopersCellNib = UINib(nibName: collectionViewCellReuseIdentifier, bundle: nil)
         collectionView.register(snoopersCellNib, forCellWithReuseIdentifier: collectionViewCellReuseIdentifier)
         
