@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 self.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
             } else {
-                self.clearCredentials()
+                self.clearCredentialsTextFields()
                 self.view.endEditing(true)
                 RootViewController.sharedInstance.pushHomeVC()
             }
@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Helpers
     
-    private func clearCredentials() {
+    private func clearCredentialsTextFields() {
         [emailTextField, passwordTextField].forEach({ $0.text = nil })
     }
 }
