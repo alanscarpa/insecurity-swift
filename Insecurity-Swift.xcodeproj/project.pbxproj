@@ -301,7 +301,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = ARC;
 				TargetAttributes = {
 					4521420F1DAD638700FCBF62 = {
@@ -546,7 +546,7 @@
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arc.Insecurity-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skytopdesigns.Insecurity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -563,7 +563,7 @@
 				INFOPLIST_FILE = "Insecurity-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arc.Insecurity-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skytopdesigns.Insecurity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

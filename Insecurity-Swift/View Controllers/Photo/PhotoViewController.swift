@@ -36,7 +36,8 @@ class PhotoViewController: UIViewController {
     }
 
     func shareButtonTapped() {
-        let activityViewController = UIActivityViewController(activityItems: [imageData.image], applicationActivities: nil)
+        guard let image = imageData.image else { return }
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
     
