@@ -7,39 +7,23 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
 class ContentLockerViewController: UIViewController {
 
-    @IBOutlet weak var nativeExpressAdView: GADNativeExpressAdView!
+    @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         RootViewController.sharedInstance.showNavigationBar = true
-
-        nativeExpressAdView.adUnitID = "ca-app-pub-5280387640092106/4400576078"
-        nativeExpressAdView.rootViewController = self
-        
-        let request = GADRequest()
-        //request.testDevices = [kGADSimulatorID]
-        nativeExpressAdView.load(request)
+        // TODO: change from testuser to real user AND obviously must be after log in
+        let userID = "testuser"
+        let request = URLRequest(url: URL(string: "http://letsfuzz.com/insecurity_upgrade/og.php?tool=cl&id=4a24fbfcdf1f8c4c5c28b1386faf034c&aff_sub=wtf")!)
+        webView.loadRequest(request)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         RootViewController.sharedInstance.showNavigationBar = false
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

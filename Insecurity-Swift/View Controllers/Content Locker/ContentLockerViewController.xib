@@ -4,14 +4,14 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentLockerViewController" customModule="Insecurity_Swift" customModuleProvider="target">
             <connections>
-                <outlet property="nativeExpressAdView" destination="tVW-2u-6Z6" id="oBN-Mg-mcw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="LKZ-lv-Vxl" id="4fg-lc-Om9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,17 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-2u-6Z6" customClass="GADNativeExpressAdView">
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKZ-lv-Vxl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tVW-2u-6Z6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9Ln-kY-tcy"/>
-                <constraint firstAttribute="trailing" secondItem="tVW-2u-6Z6" secondAttribute="trailing" id="BoT-vC-6hh"/>
-                <constraint firstItem="tVW-2u-6Z6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NDy-7L-UB9"/>
-                <constraint firstAttribute="bottom" secondItem="tVW-2u-6Z6" secondAttribute="bottom" id="Z0l-H4-Sxh"/>
+                <constraint firstItem="LKZ-lv-Vxl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1Ah-vE-DVR"/>
+                <constraint firstAttribute="bottom" secondItem="LKZ-lv-Vxl" secondAttribute="bottom" id="MdV-bW-RLE"/>
+                <constraint firstAttribute="trailing" secondItem="LKZ-lv-Vxl" secondAttribute="trailing" id="bxm-2t-oxH"/>
+                <constraint firstItem="LKZ-lv-Vxl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vfh-8q-PaB"/>
             </constraints>
         </view>
     </objects>

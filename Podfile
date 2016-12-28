@@ -10,6 +10,5 @@ target 'Insecurity-Swift' do
   pod 'Firebase/Database'
   pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift'
-  pod 'Firebase/AdMob'
   
 end
