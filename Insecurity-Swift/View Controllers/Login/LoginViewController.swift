@@ -20,6 +20,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        launchContentLocker()
+    }
+    
+    func launchContentLocker() {
+        RootViewController.sharedInstance.pushContentLockerVC()
     }
 
     func setUpUI() {

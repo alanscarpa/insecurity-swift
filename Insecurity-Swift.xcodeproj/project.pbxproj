@@ -27,6 +27,8 @@
 		452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452142261DAD64ED00FCBF62 /* RootViewController.swift */; };
 		4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4521422A1DAD676900FCBF62 /* LoginViewController.swift */; };
 		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
+		452F624E1E0F2B530088A022 /* ContentLockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F624C1E0F2B530088A022 /* ContentLockerViewController.swift */; };
+		452F624F1E0F2B530088A022 /* ContentLockerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452F624D1E0F2B530088A022 /* ContentLockerViewController.xib */; };
 		45ABA01B1DDD51F1005DDE75 /* UIColor+Insecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABA01A1DDD51F1005DDE75 /* UIColor+Insecurity.swift */; };
 		45ABA01E1DDD5453005DDE75 /* INSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABA01D1DDD5453005DDE75 /* INSButton.swift */; };
 		45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F61DC8405300F82C26 /* FirebaseManager.swift */; };
@@ -62,6 +64,8 @@
 		452142261DAD64ED00FCBF62 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4521422A1DAD676900FCBF62 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		452F624C1E0F2B530088A022 /* ContentLockerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentLockerViewController.swift; sourceTree = "<group>"; };
+		452F624D1E0F2B530088A022 /* ContentLockerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentLockerViewController.xib; sourceTree = "<group>"; };
 		45ABA01A1DDD51F1005DDE75 /* UIColor+Insecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Insecurity.swift"; sourceTree = "<group>"; };
 		45ABA01D1DDD5453005DDE75 /* INSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSButton.swift; sourceTree = "<group>"; };
 		45AD73F61DC8405300F82C26 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		452142251DAD64AC00FCBF62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				452F624B1E0F2B2B0088A022 /* Content Locker */,
 				451EDE981DD968CF00150D5C /* Photo */,
 				45FB5C071DC93B7B00A61328 /* Snoopers */,
 				451CAF2C1DB84298005430CE /* Trap */,
@@ -216,6 +221,15 @@
 				4521422B1DAD676900FCBF62 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		452F624B1E0F2B2B0088A022 /* Content Locker */ = {
+			isa = PBXGroup;
+			children = (
+				452F624C1E0F2B530088A022 /* ContentLockerViewController.swift */,
+				452F624D1E0F2B530088A022 /* ContentLockerViewController.xib */,
+			);
+			path = "Content Locker";
 			sourceTree = "<group>";
 		};
 		45ABA01C1DDD5429005DDE75 /* Views */ = {
@@ -301,7 +315,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ARC;
 				TargetAttributes = {
 					4521420F1DAD638700FCBF62 = {
@@ -347,6 +361,7 @@
 				451CAF1D1DB8104A005430CE /* GoogleService-Info.plist in Resources */,
 				451CAF2B1DB835DE005430CE /* HowItWorksViewController.xib in Resources */,
 				451CAF301DB842B3005430CE /* TrapViewController.xib in Resources */,
+				452F624F1E0F2B530088A022 /* ContentLockerViewController.xib in Resources */,
 				45FB5C0F1DC93DA700A61328 /* SnoopersCollectionViewCell.xib in Resources */,
 				451EDE9C1DD968EE00150D5C /* PhotoViewController.xib in Resources */,
 				4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */,
@@ -413,6 +428,7 @@
 				451CAF161DAD78D0005430CE /* HomeViewController.swift in Sources */,
 				451CAF2F1DB842B3005430CE /* TrapViewController.swift in Sources */,
 				45ABA01B1DDD51F1005DDE75 /* UIColor+Insecurity.swift in Sources */,
+				452F624E1E0F2B530088A022 /* ContentLockerViewController.swift in Sources */,
 				451CAF251DB81C88005430CE /* UIAlertController+Insecurity.swift in Sources */,
 				45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */,
 				4521422C1DAD676900FCBF62 /* LoginViewController.swift in Sources */,

@@ -26,6 +26,10 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+        <key>NSAllowsArbitraryLoadsForMedia</key>
+        <true/>
+        <key>NSAllowsArbitraryLoadsInWebContent</key>
+        <true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Insecurity needs access to your camera to take photos of phone snoopers!</string>
