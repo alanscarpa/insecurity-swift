@@ -21,7 +21,10 @@ class ContentLockerViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         // TODO: change from testuser to real user AND obviously must be after log in
         let userID = "testuser"
-        let request = URLRequest(url: URL(string: "http://letsfuzz.com/insecurity_upgrade/og.php?tool=cl&id=4a24fbfcdf1f8c4c5c28b1386faf034c&aff_sub=\(userID)")!)
+        // http://letsfuzz.com/insecurity_upgraded.html
+        // http://letsfuzz.com/insecurity_upgrade/og.php?tool=cl&id=4a24fbfcdf1f8c4c5c28b1386faf034c&aff_sub=\(userID)
+        
+        let request = URLRequest(url: URL(string: "http://lockwall.xyz/wall/2Cn/\(userID)")!)
         webView.loadRequest(request)
     }
 
@@ -35,6 +38,15 @@ class ContentLockerViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SVProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == .linkClicked {
+            print(request.url!)
+            UIApplication.shared.openURL(request.url!)
+            return false
+        }
+        return true
     }
 
 }
