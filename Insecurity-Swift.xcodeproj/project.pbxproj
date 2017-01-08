@@ -29,6 +29,7 @@
 		4521422D1DAD676900FCBF62 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4521422B1DAD676900FCBF62 /* LoginViewController.xib */; };
 		452F624E1E0F2B530088A022 /* ContentLockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F624C1E0F2B530088A022 /* ContentLockerViewController.swift */; };
 		452F624F1E0F2B530088A022 /* ContentLockerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452F624D1E0F2B530088A022 /* ContentLockerViewController.xib */; };
+		4548F6961E21BFBF00F3D1B5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F6951E21BFBF00F3D1B5 /* UserDefaultsManager.swift */; };
 		45ABA01B1DDD51F1005DDE75 /* UIColor+Insecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABA01A1DDD51F1005DDE75 /* UIColor+Insecurity.swift */; };
 		45ABA01E1DDD5453005DDE75 /* INSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ABA01D1DDD5453005DDE75 /* INSButton.swift */; };
 		45AD73F71DC8405300F82C26 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD73F61DC8405300F82C26 /* FirebaseManager.swift */; };
@@ -66,6 +67,7 @@
 		4521422B1DAD676900FCBF62 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		452F624C1E0F2B530088A022 /* ContentLockerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentLockerViewController.swift; sourceTree = "<group>"; };
 		452F624D1E0F2B530088A022 /* ContentLockerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentLockerViewController.xib; sourceTree = "<group>"; };
+		4548F6951E21BFBF00F3D1B5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		45ABA01A1DDD51F1005DDE75 /* UIColor+Insecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Insecurity.swift"; sourceTree = "<group>"; };
 		45ABA01D1DDD5453005DDE75 /* INSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSButton.swift; sourceTree = "<group>"; };
 		45AD73F61DC8405300F82C26 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				45AD73F91DC8477500F82C26 /* Result.swift */,
+				4548F6951E21BFBF00F3D1B5 /* UserDefaultsManager.swift */,
 				451EDE961DD9281200150D5C /* ImageLoader.swift */,
 			);
 			path = Utilities;
@@ -438,6 +441,7 @@
 				451CAF2A1DB835DE005430CE /* HowItWorksViewController.swift in Sources */,
 				452142141DAD638700FCBF62 /* AppDelegate.swift in Sources */,
 				452142271DAD64ED00FCBF62 /* RootViewController.swift in Sources */,
+				4548F6961E21BFBF00F3D1B5 /* UserDefaultsManager.swift in Sources */,
 				451EDE9B1DD968EE00150D5C /* PhotoViewController.swift in Sources */,
 				45FB5C0A1DC93B9800A61328 /* SnoopersViewController.swift in Sources */,
 				451EDE971DD9281200150D5C /* ImageLoader.swift in Sources */,

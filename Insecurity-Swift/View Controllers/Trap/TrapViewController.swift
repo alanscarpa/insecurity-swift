@@ -103,6 +103,7 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func completeTrapPhotoProcess() {
+        UserDefaultsManager.shared.setFirstPhotoTaken()
         FirebaseManager.sharedInstance.signOutCurrentUser { [weak self] result in
             if let error = result.error {
                 self?.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)

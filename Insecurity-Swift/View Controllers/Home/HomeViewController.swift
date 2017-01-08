@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController, FirebaseManagerDelegate {
 
@@ -35,7 +37,29 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
     }
 
     @IBAction func setTrapButtonTapped() {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("users").child(userID ?? "").observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let isConverted = value?["converted"] as? Bool ?? false
+            if isConverted || !UserDefaultsManager.shared.hasTakenFirstPhoto {
+                self?.launchTrapVC()
+            } else {
+                self?.launchContentLocker()
+            }
+        }) { [weak self] error in
+            self?.present(UIAlertController.createSimpleAlert(withTitle: "Error", message: error.localizedDescription), animated: true, completion: nil)
+        }
+    }
+    
+    func launchTrapVC() {
         AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized ? pushTrapVC() : askForCameraPermission()
+    }
+    
+    func launchContentLocker() {
+        RootViewController.sharedInstance.pushContentLockerVC()
     }
     
     private func askForCameraPermission() {

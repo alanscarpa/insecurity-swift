@@ -24,10 +24,9 @@ class ContentLockerViewController: UIViewController, UIWebViewDelegate {
         // http://letsfuzz.com/insecurity_upgraded.html
         // http://letsfuzz.com/insecurity_upgrade/og.php?tool=cl&id=4a24fbfcdf1f8c4c5c28b1386faf034c&aff_sub=\(userID)
         // https://www.appcaptcha.com/cl.php?id=4a24fbfcdf1f8c4c5c28b1386faf034c&aff_sub4=\(userID)
-        
         // http://lockwall.xyz/wall/2Cn/\(userID)
-        
         //http://jump.ogtrk.net/aff_c?aff_id=69224&offer_id=1930
+        
         print(Locale.current.regionCode!)
         let request = URLRequest(url: URL(string: "http://letsfuzz.com/insecurity_upgraded.html?userID=\(userID)")!)
         webView.loadRequest(request)
