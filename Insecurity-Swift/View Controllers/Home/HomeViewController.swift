@@ -68,7 +68,13 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
     }
     
     @IBAction func freeOfferButtonTapped() {
-        
+        if let url = URL(string: "http://linkz.it/s/54n/") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:])
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     
     @IBAction func logoutButtonTapped() {
