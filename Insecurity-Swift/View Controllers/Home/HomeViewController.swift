@@ -67,6 +67,10 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
         RootViewController.sharedInstance.pushHowItWorksVC()
     }
     
+    @IBAction func freeOfferButtonTapped() {
+        
+    }
+    
     @IBAction func logoutButtonTapped() {
         FirebaseManager.sharedInstance.signOutCurrentUser { [weak self] result in
             if let error = result.error {

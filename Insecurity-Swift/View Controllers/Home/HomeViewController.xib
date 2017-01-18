@@ -90,6 +90,9 @@
                         <color key="titleColor" red="0.55945295100000003" green="0.84915626050000004" blue="0.99421465399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="freeOfferButtonTapped" destination="-1" eventType="touchUpInside" id="jNp-je-jtJ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.17391428349999999" green="0.59988039729999998" blue="0.8293479681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
