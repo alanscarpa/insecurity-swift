@@ -44,11 +44,12 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePickerController.modalPresentationStyle = .fullScreen
         imagePickerController.showsCameraControls = false
         imagePickerController.cameraDevice = .front
+        imagePickerController.cameraFlashMode = .on
     }
     
     private func setUpAudioPlayer() {
         do {
-            //try audioSession.setCategory(.playback, mode: .default, options: .defaultToSpeaker)
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "siren", ofType: "mp3")!))
             audioPlayer.prepareToPlay()
         } catch {
@@ -89,8 +90,8 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
             completeTrapPhotoProcess()
