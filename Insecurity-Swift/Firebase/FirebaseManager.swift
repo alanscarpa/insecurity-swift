@@ -53,7 +53,7 @@ class FirebaseManager {
     func signOutCurrentUser(completion: @escaping (Result<Void>) -> Void) {
         do {
             try FIRAuth.auth()?.signOut()
-            completion(.Success())
+            completion(.Success(()))
         } catch {
             completion(.Failure(error))
         }
@@ -84,7 +84,7 @@ class FirebaseManager {
                         if let error = error {
                             completion(.Failure(error))
                         } else {
-                            completion(.Success())
+                            completion(.Success(()))
                         }
                     })
             }
@@ -117,7 +117,7 @@ class FirebaseManager {
                             completion(.Failure(error))
                         } else {
                             ImageLoader.sharedInstance.removeImageData(imageDataToRemove: imageData)
-                            completion(.Success())
+                            completion(.Success(()))
                         }
                     }
             }

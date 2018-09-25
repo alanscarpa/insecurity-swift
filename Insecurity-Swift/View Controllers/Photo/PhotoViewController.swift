@@ -35,13 +35,13 @@ class PhotoViewController: UIViewController {
         setToolbarItems([shareButton, spacer, deleteButton], animated: true)
     }
 
-    func shareButtonTapped() {
+    @objc func shareButtonTapped() {
         guard let image = imageData.image else { return }
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
     
-    func deleteButtonTapped() {
+    @objc func deleteButtonTapped() {
         let confirmationAlert = UIAlertController.createDeleteAlert(withTitle: "Delete Photo?", message: "Are you sure you want to delete this photo?") { _ in
             SVProgressHUD.show()
             FirebaseManager.sharedInstance.deleteImage(imageData: self.imageData) { [weak self] result in

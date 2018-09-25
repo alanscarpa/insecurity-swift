@@ -35,15 +35,15 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
     }
 
     @IBAction func setTrapButtonTapped() {
-        AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized ? pushTrapVC() : askForCameraPermission()
+        AVCaptureDevice.authorizationStatus(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) == .authorized ? pushTrapVC() : askForCameraPermission()
     }
     
     private func askForCameraPermission() {
-        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .denied
-            || AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) ==  .restricted {
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) ==  .denied
+            || AVCaptureDevice.authorizationStatus(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) ==  .restricted {
             presentCameraPermissionsAlert()
         } else {
-            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
+            AVCaptureDevice.requestAccess(for: .video) { granted in
                 OperationQueue.main.addOperation { [weak self] in
                     granted ? self?.pushTrapVC() : self?.presentCameraPermissionsAlert()
                 }
@@ -92,4 +92,9 @@ class HomeViewController: UIViewController, FirebaseManagerDelegate {
         RootViewController.sharedInstance.popViewController()
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
+	return input.rawValue
 }

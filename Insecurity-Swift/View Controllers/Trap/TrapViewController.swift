@@ -14,6 +14,7 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let imagePickerController = UIImagePickerController()
     var bustedPhoto = UIImage()
     var pictureFrameImageView = UIImageView()
+    let audioSession = AVAudioSession.sharedInstance()
     var audioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var trapIsSetLabel: UILabel!
@@ -47,49 +48,55 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     private func setUpAudioPlayer() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            //try audioSession.setCategory(.playback, mode: .default, options: .defaultToSpeaker)
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "siren", ofType: "mp3")!))
+            audioPlayer.prepareToPlay()
         } catch {
             present(UIAlertController.createSimpleAlert(withTitle: "Sound Error", message: error.localizedDescription), animated: true, completion: nil)
         }
-        audioPlayer.prepareToPlay()
     }
     
     // MARK: - Notifications
     
     private func registerForNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(takePhoto), name: .UIApplicationDidBecomeActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(phoneWillLock), name: .UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(takePhoto), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(phoneWillLock), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     private func unregisterForNotifications() {
-        [.UIApplicationDidBecomeActive, .UIApplicationWillResignActive].forEach({ NotificationCenter.default.removeObserver(self, name: $0, object: nil) })
+        [UIApplication.didBecomeActiveNotification, UIApplication.willResignActiveNotification].forEach({ NotificationCenter.default.removeObserver(self, name: $0, object: nil) })
     }
     
-    func phoneWillLock() {
+    @objc func phoneWillLock() {
         [trapIsSetLabel, lockPhoneLabel, cancelButton].forEach({ $0.isHidden = true })
         [snoopingLabel, trustMeLabel, sayCheeseLabel].forEach({ $0.isHidden = false })
     }
     
-    func takePhoto() {
+    @objc func takePhoto() {
         guard FirebaseManager.sharedInstance.currentUserIsSignedIn else { return }
         guard self.isViewLoaded && self.view.window != nil else { return }
         guard UIApplication.shared.applicationState == .active else { return }
         present(imagePickerController, animated: true) { [weak self] in
-            guard let strongSelf = self else { self?.completeTrapPhotoProcess(); return }
-            guard UIApplication.shared.applicationState == .active else { self?.completeTrapPhotoProcess(); return }
-            strongSelf.imagePickerController.takePicture()
-            strongSelf.audioPlayer.play()
+            guard UIApplication.shared.applicationState == .active else {
+                self?.imagePickerController.dismiss(animated: false, completion: nil)
+                return
+            }
+            self?.imagePickerController.takePicture()
+            self?.audioPlayer.play()
         }
     }
     
     // MARK: - UIImagePickerControllerDelegate
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { completeTrapPhotoProcess()
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
+            completeTrapPhotoProcess()
             return
         }
-        guard let photoData = UIImageJPEGRepresentation(image, 0.3) else {
+        guard let photoData = image.jpegData(compressionQuality: 0.3) else {
             completeTrapPhotoProcess()
             return
         }
@@ -119,4 +126,19 @@ class TrapViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         RootViewController.sharedInstance.popViewController()
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

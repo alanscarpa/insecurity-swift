@@ -31,10 +31,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         
         rootNavigationController.setNavigationBarHidden(true, animated: false)
         rootNavigationController.delegate = self
-        rootNavigationController.willMove(toParentViewController: self)
-        addChildViewController(rootNavigationController)
+        rootNavigationController.willMove(toParent: self)
+        addChild(rootNavigationController)
         view.addSubview(rootNavigationController.view)
-        rootNavigationController.didMove(toParentViewController: self)
+        rootNavigationController.didMove(toParent: self)
         
         rootNavigationController.view.frame = super.view.frame
     }
